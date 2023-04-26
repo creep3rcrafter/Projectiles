@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "net.creep3rcrafter.projectiles.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+  ],
+  "mixins": [
+    "BowItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
