@@ -1,6 +1,8 @@
 package net.creep3rcrafter.projectiles.projectile;
 
 import net.creep3rcrafter.projectiles.utils.Utils;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Arrow;
@@ -26,9 +28,10 @@ public class EnderArrow extends Arrow {
         super.onHitEntity(entityHitResult);
         if (!this.level.isClientSide) {
             if(this.getOwner()!= null){
+                this.playSound(SoundEvents.ENDERMAN_TELEPORT);
                 this.getOwner().teleportTo(this.position().x, this.position().y, this.position().z);
             }
-            this.remove(RemovalReason.DISCARDED);
+            this.discard();
         }
     }
 
@@ -37,9 +40,10 @@ public class EnderArrow extends Arrow {
         super.onHitBlock(blockHitResult);
         if (!this.level.isClientSide) {
             if(this.getOwner()!= null){
+                this.playSound(SoundEvents.ENDERMAN_TELEPORT);
                 this.getOwner().teleportTo(this.position().x, this.position().y, this.position().z);
             }
-            this.remove(RemovalReason.DISCARDED);
+            this.discard();
         }
     }
 }

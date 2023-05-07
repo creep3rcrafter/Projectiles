@@ -17,5 +17,4 @@ public class SlimeArrowRenderer extends ArrowRenderer<SlimeArrow> {
     public ResourceLocation getTextureLocation(SlimeArrow arrow) {
         return ARROW_LOCATION;
     }
-
 }

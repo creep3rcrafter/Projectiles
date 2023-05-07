@@ -1,6 +1,8 @@
 package net.creep3rcrafter.projectiles.projectile;
 
 import net.creep3rcrafter.projectiles.utils.Utils;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Arrow;
@@ -9,6 +11,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 
 public class TNTArrow extends Arrow {
+
     public TNTArrow(EntityType<? extends Arrow> entityType, Level level) {
         super(entityType, level);
     }
@@ -26,7 +29,7 @@ public class TNTArrow extends Arrow {
         super.onHitEntity(entityHitResult);
         if (!this.level.isClientSide) {
             Utils.explode(this.level, entityHitResult.getEntity().blockPosition(), 2f);
-            this.remove(RemovalReason.DISCARDED);
+            discard();
         }
     }
 
@@ -35,7 +38,12 @@ public class TNTArrow extends Arrow {
         super.onHitBlock(blockHitResult);
         if (!this.level.isClientSide) {
             Utils.explode(this.level, blockHitResult.getBlockPos(), 2f);
-            this.remove(RemovalReason.DISCARDED);
+            discard();
         }
+    }
+
+    @Override
+    protected SoundEvent getDefaultHitGroundSoundEvent() {
+        return SoundEvents.CREEPER_PRIMED;
     }
 }

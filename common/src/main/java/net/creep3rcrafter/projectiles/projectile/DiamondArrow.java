@@ -1,5 +1,7 @@
 package net.creep3rcrafter.projectiles.projectile;
 
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Arrow;
@@ -16,5 +18,11 @@ public class DiamondArrow extends Arrow {
 
     public DiamondArrow(Level level, LivingEntity livingEntity) {
         super(level, livingEntity);
+    }
+
+
+    @Override
+    protected SoundEvent getDefaultHitGroundSoundEvent() {
+        return SoundEvents.SMALL_AMETHYST_BUD_BREAK;
     }
 }

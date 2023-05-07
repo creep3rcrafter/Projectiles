@@ -1,13 +1,19 @@
 package net.creep3rcrafter.projectiles.item;
 
 import net.creep3rcrafter.projectiles.projectile.EchoArrow;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.item.ArrowItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public class EchoArrowItem extends ArrowItem {
+import java.util.List;
+
+public class EchoArrowItem extends CustomArrowItem {
     public EchoArrowItem(Properties properties) {
         super(properties);
     }
@@ -15,7 +21,18 @@ public class EchoArrowItem extends ArrowItem {
     @Override
     public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity livingEntity) {
         EchoArrow arrow = new EchoArrow(level, livingEntity);
+        arrow.pickup = AbstractArrow.Pickup.DISALLOWED;
+        arrow.setBaseDamage(getBaseDamage());
         return arrow;
+    }
+    @Override
+    public double getBaseDamage() {
+        return 3.5D;
+    }
+    @Override
+    public void appendHoverText(ItemStack itemStack, @Nullable Level level, @NotNull List<Component> list, @NotNull TooltipFlag tooltipFlag) {
+        list.add(Component.translatable("Sonic Damage: 5").withStyle(ChatFormatting.AQUA));
+        super.appendHoverText(itemStack, level, list, tooltipFlag);
     }
 
 }

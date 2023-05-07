@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "tag": "forge:ingots/gold"
+    },
+    "#": {
+      "tag": "forge:rods/wooden"
+    },
+    "Y": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "X",
+    "#",
+    "Y"
+  ],
+  "result": {
+    "count": 4,
+    "item": "projectiles:gold_arrow"
+  }
+}

@@ -20,7 +20,7 @@
     "environment": "*",
     "entrypoints": {
       "init": [
-        "net.projectiles.quilt.ProjectilesQuilt"
+        "net.creep3rcrafter.projectiles.quilt.ProjectilesQuilt"
       ]
     },
     "depends": [

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "item": "minecraft:chorus_fruit"
+    },
+    "#": {
+      "tag": "forge:rods/wooden"
+    },
+    "Y": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "X",
+    "#",
+    "Y"
+  ],
+  "result": {
+    "count": 1,
+    "item": "projectiles:chorus_arrow"
+  }
+}

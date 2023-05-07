@@ -1,3 +1,20 @@
 {
-  "item.projectiles.example_item": "Example Item"
+  "item.projectiles.wood_arrow": "Wood Arrow",
+  "item.projectiles.bone_arrow": "Bone Arrow",
+  "item.projectiles.copper_arrow": "Copper Arrow",
+  "item.projectiles.iron_arrow": "Iron Arrow",
+  "item.projectiles.gold_arrow": "Gold Arrow",
+  "item.projectiles.diamond_arrow": "Diamond Arrow",
+  "item.projectiles.netherite_arrow": "Netherite Arrow",
+  "item.projectiles.obsidian_arrow": "Obsidian Arrow",
+  "item.projectiles.nether_quartz_arrow": "Nether Quartz Arrow",
+  "item.projectiles.amethyst_arrow": "Amethyst Arrow",
+  "item.projectiles.prismarine_arrow": "Prismarine Arrow",
+  "item.projectiles.slime_arrow": "Slime Arrow",
+  "item.projectiles.cobweb_arrow": "Cobweb Arrow",
+  "item.projectiles.chorus_arrow": "Chorus Arrow",
+  "item.projectiles.tnt_arrow": "Dynamite Arrow",
+  "item.projectiles.ender_arrow": "Ender Arrow",
+  "item.projectiles.echo_arrow": "Echo Arrow",
+  "item.projectiles.soul_arrow": "Soul Arrow"
 }

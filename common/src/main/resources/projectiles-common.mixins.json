@@ -5,7 +5,6 @@
   "client": [
   ],
   "mixins": [
-    "BowItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

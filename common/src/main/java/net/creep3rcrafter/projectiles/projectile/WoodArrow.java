@@ -1,11 +1,14 @@
 package net.creep3rcrafter.projectiles.projectile;
 
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.level.Level;
 
 public class WoodArrow extends Arrow {
+
     public WoodArrow(EntityType<? extends Arrow> entityType, Level level) {
         super(entityType, level);
     }
@@ -16,5 +19,10 @@ public class WoodArrow extends Arrow {
 
     public WoodArrow(Level level, LivingEntity livingEntity) {
         super(level, livingEntity);
+    }
+
+    @Override
+    protected SoundEvent getDefaultHitGroundSoundEvent() {
+        return SoundEvents.WOODEN_BUTTON_CLICK_OFF;
     }
 }

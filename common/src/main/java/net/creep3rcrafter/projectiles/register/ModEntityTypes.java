@@ -55,4 +55,17 @@ public class ModEntityTypes {
     public static final RegistrySupplier<EntityType<WoodArrow>> WOOD_ARROW = ENTITY_TYPES.register("wood_arrow", () ->
             EntityType.Builder.<WoodArrow>of(WoodArrow::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build(
                     new ResourceLocation(Projectiles.MOD_ID, "wood_arrow").toString()));
+
+    public static final RegistrySupplier<EntityType<BoneArrow>> BONE_ARROW = ENTITY_TYPES.register("bone_arrow", () ->
+            EntityType.Builder.<BoneArrow>of(BoneArrow::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build(
+                    new ResourceLocation(Projectiles.MOD_ID, "bone_arrow").toString()));
+    public static final RegistrySupplier<EntityType<SoulArrow>> SOUL_ARROW = ENTITY_TYPES.register("soul_arrow", () ->
+            EntityType.Builder.<SoulArrow>of(SoulArrow::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build(
+                    new ResourceLocation(Projectiles.MOD_ID, "soul_arrow").toString()));
+    public static final RegistrySupplier<EntityType<CobwebArrow>> COBWEB_ARROW = ENTITY_TYPES.register("cobweb_arrow", () ->
+            EntityType.Builder.<CobwebArrow>of(CobwebArrow::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build(
+                    new ResourceLocation(Projectiles.MOD_ID, "cobweb_arrow").toString()));
+    public static final RegistrySupplier<EntityType<ChorusArrow>> CHORUS_ARROW = ENTITY_TYPES.register("chorus_arrow", () ->
+            EntityType.Builder.<ChorusArrow>of(ChorusArrow::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build(
+                    new ResourceLocation(Projectiles.MOD_ID, "chorus_arrow").toString()));
 }

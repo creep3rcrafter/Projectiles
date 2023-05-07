@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "projectiles:wood_arrow",
+    "projectiles:bone_arrow",
+    "projectiles:copper_arrow",
+    "projectiles:iron_arrow",
+    "projectiles:gold_arrow",
+    "projectiles:diamond_arrow",
+    "projectiles:netherite_arrow",
+    "projectiles:obsidian_arrow",
+    "projectiles:nether_quartz_arrow",
+    "projectiles:amethyst_arrow",
+    "projectiles:prismarine_arrow",
+    "projectiles:slime_arrow",
+    "projectiles:cobweb_arrow",
+    "projectiles:chorus_arrow",
+    "projectiles:tnt_arrow",
+    "projectiles:ender_arrow",
+    "projectiles:echo_arrow",
+    "projectiles:soul_arrow"
+  ]
+}

@@ -2,8 +2,13 @@ package net.creep3rcrafter.projectiles.utils;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ProjectileWeaponItem;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
+
+import java.util.function.Predicate;
 
 public class Utils {
     public static void explode(Level level, BlockPos blockPos) {
