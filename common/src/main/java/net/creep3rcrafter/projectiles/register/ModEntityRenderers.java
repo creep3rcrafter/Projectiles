@@ -23,5 +23,6 @@ public class ModEntityRenderers {
         EntityRendererRegistry.register(ModEntityTypes.SOUL_ARROW, SoulArrowRenderer::new);
         EntityRendererRegistry.register(ModEntityTypes.COBWEB_ARROW, CobwebArrowRenderer::new);
         EntityRendererRegistry.register(ModEntityTypes.CHORUS_ARROW, ChorusArrowRenderer::new);
+        EntityRendererRegistry.register(ModEntityTypes.BAMBOO_ARROW, BambooArrowRenderer::new);
     }
 }

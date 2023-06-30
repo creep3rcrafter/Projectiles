@@ -117,6 +117,7 @@ public class ModDispenserBlockProjectiles {
                 SlimeArrow arrow = new SlimeArrow(level, position.x(), position.y(), position.z());
                 arrow.pickup = AbstractArrow.Pickup.DISALLOWED;
                 arrow.setBaseDamage(ModItems.SLIME_ARROW.get().getBaseDamage());
+                arrow.setKnockback(0);
                 return arrow;
             }
         });
@@ -167,6 +168,14 @@ public class ModDispenserBlockProjectiles {
                 arrow.pickup = AbstractArrow.Pickup.DISALLOWED;
                 arrow.setNoGravity(true);
                 arrow.setBaseDamage(ModItems.SOUL_ARROW.get().getBaseDamage());
+                return arrow;
+            }
+        });
+        DispenserBlock.registerBehavior(ModItems.BAMBOO_ARROW.get(), new AbstractProjectileDispenseBehavior() {
+            protected @NotNull Projectile getProjectile(@NotNull Level level, @NotNull Position position, @NotNull ItemStack itemStack) {
+                BambooArrow arrow = new BambooArrow(level, position.x(), position.y(), position.z());
+                arrow.pickup = AbstractArrow.Pickup.ALLOWED;
+                arrow.setBaseDamage(ModItems.BAMBOO_ARROW.get().getBaseDamage());
                 return arrow;
             }
         });

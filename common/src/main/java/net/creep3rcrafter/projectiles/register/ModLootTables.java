@@ -135,5 +135,25 @@ public class ModLootTables {
                 context.addPool(pool);
             }
         });
+        LootEvent.MODIFY_LOOT_TABLE.register((lootTables, id, context, builtin) -> {
+            if (builtin && BuiltInLootTables.JUNGLE_TEMPLE.equals(id)){
+                LootPool.Builder pool = LootPool.lootPool()
+                        .add(LootItem.lootTableItem(ModItems.BAMBOO_ARROW.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.BONE_ARROW.get()).setWeight(1))
+                        .add(EmptyLootItem.emptyItem().setWeight(1))
+                        .setRolls(UniformGenerator.between(0, 6));
+                context.addPool(pool);
+            }
+        });
+        LootEvent.MODIFY_LOOT_TABLE.register((lootTables, id, context, builtin) -> {
+            if (builtin && BuiltInLootTables.JUNGLE_TEMPLE_DISPENSER.equals(id)){
+                LootPool.Builder pool = LootPool.lootPool()
+                        .add(LootItem.lootTableItem(ModItems.BAMBOO_ARROW.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.BONE_ARROW.get()).setWeight(1))
+                        .add(EmptyLootItem.emptyItem().setWeight(1))
+                        .setRolls(UniformGenerator.between(0, 6));
+                context.addPool(pool);
+            }
+        });
     }
 }

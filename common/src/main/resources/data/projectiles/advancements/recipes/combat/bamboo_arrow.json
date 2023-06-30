@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:stick"
+              "minecraft:bamboo"
             ]
           }
         ]
@@ -27,7 +27,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "projectiles:wood_arrow"
+        "recipe": "projectiles:bamboo_arrow"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -41,7 +41,7 @@
   ],
   "rewards": {
     "recipes": [
-      "projectiles:wood_arrow"
+      "projectiles:bamboo_arrow"
     ]
   }
 }

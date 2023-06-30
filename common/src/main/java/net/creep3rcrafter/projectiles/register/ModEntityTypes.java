@@ -15,6 +15,9 @@ public class ModEntityTypes {
     public static final RegistrySupplier<EntityType<AmethystArrow>> AMETHYST_ARROW = ENTITY_TYPES.register("amethyst_arrow", () ->
             EntityType.Builder.<AmethystArrow>of(AmethystArrow::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build(
                     new ResourceLocation(Projectiles.MOD_ID, "amethyst_arrow").toString()));
+    public static final RegistrySupplier<EntityType<BambooArrow>> BAMBOO_ARROW = ENTITY_TYPES.register("bamboo_arrow", () ->
+            EntityType.Builder.<BambooArrow>of(BambooArrow::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build(
+                    new ResourceLocation(Projectiles.MOD_ID, "bamboo_arrow").toString()));
     public static final RegistrySupplier<EntityType<CopperArrow>> COPPER_ARROW = ENTITY_TYPES.register("copper_arrow", () ->
             EntityType.Builder.<CopperArrow>of(CopperArrow::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build(
                     new ResourceLocation(Projectiles.MOD_ID, "copper_arrow").toString()));

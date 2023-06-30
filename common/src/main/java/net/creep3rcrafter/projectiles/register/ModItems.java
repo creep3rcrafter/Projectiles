@@ -5,6 +5,7 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import net.creep3rcrafter.projectiles.item.*;
 import net.creep3rcrafter.projectiles.Projectiles;
 import net.minecraft.core.Registry;
+import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 
@@ -21,6 +22,7 @@ public class ModItems {
     //blaze arrow
     //smoke arrow
     //freezing arrow
+    //bamboo arrow
     //dynamite
     //Packed Snowball
     //Dynamite Snowball
@@ -28,9 +30,13 @@ public class ModItems {
     //slingshot > shoots seeds and buttons
     //slime not compatible with punch bows - fixed
     //lead arrow
-    //fletcher should give arrows
+    // ender arrow text, chorus text, cobweb text, copper text
+    // diamond arrow and gold arrow do same damage
+
     public static final RegistrySupplier<WoodArrowItem> WOOD_ARROW = ITEMS.register("wood_arrow", () ->
             new WoodArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
+    public static final RegistrySupplier<BambooArrowItem> BAMBOO_ARROW = ITEMS.register("bamboo_arrow", () ->
+            new BambooArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
     public static final RegistrySupplier<BoneArrowItem> BONE_ARROW = ITEMS.register("bone_arrow", () ->
             new BoneArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
     public static final RegistrySupplier<CopperArrowItem> COPPER_ARROW = ITEMS.register("copper_arrow", () ->

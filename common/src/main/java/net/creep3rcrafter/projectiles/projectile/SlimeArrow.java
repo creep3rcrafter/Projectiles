@@ -6,9 +6,11 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Arrow;
+import net.minecraft.world.item.BowItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
+import org.jetbrains.annotations.NotNull;
 
 public class SlimeArrow extends Arrow {
     public SlimeArrow(EntityType<? extends Arrow> entityType, Level level) {
@@ -23,7 +25,7 @@ public class SlimeArrow extends Arrow {
         super(level, livingEntity);
     }
 
-    private final int BASE_KNOCKBACK = 5;
+    public static final int BASE_KNOCKBACK = 4;
 
     @Override
     protected void onHitEntity(EntityHitResult entityHitResult) {
@@ -40,13 +42,14 @@ public class SlimeArrow extends Arrow {
             discard();
         }
     }
+
     @Override
     public void setKnockback(int i) {
         super.setKnockback(i + BASE_KNOCKBACK);
     }
 
     @Override
-    protected SoundEvent getDefaultHitGroundSoundEvent() {
+    protected @NotNull SoundEvent getDefaultHitGroundSoundEvent() {
         return SoundEvents.SLIME_JUMP;
     }
 }
