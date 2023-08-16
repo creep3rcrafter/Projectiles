@@ -3,6 +3,7 @@
   "values": [
     "projectiles:wood_arrow",
     "projectiles:bone_arrow",
+    "projectiles:bamboo_arrow",
     "projectiles:copper_arrow",
     "projectiles:iron_arrow",
     "projectiles:gold_arrow",

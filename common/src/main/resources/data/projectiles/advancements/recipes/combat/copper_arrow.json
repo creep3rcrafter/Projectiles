@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:stick"
+              "minecraft:copper_ingot"
             ]
           }
         ]
@@ -27,7 +27,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "projectiles:wood_arrow"
+        "recipe": "projectiles:copper_arrow"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -41,7 +41,7 @@
   ],
   "rewards": {
     "recipes": [
-      "projectiles:wood_arrow"
+      "projectiles:copper_arrow"
     ]
   }
 }
