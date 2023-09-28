@@ -1,5 +1,3 @@
-import java.nio.file.Files
-
 plugins {
     id "architectury-plugin" version "3.4-SNAPSHOT"
     id "dev.architectury.loom" version "1.0.+" apply false
@@ -8,54 +6,41 @@ plugins {
     id("com.matthewprenger.cursegradle") version "1.4.+"
 }
 
+tasks.register('runAllClients') {
+    dependsOn(':forge:runClient', ':fabric:runClient', ':quilt:runClient')
+}
+tasks.register('runForgeClient') {
+    dependsOn(':forge:runClient')
+
+}
+tasks.register('runFabricClient') {
+    dependsOn(':fabric:runClient')
+
+}
+tasks.register('runQuiltClient') {
+    dependsOn(':quilt:runClient')
+
+}
+
 architectury {
     minecraft = rootProject.minecraft_version
 }
+
 forgix {
     group = project.maven_group
     mergedJarName = "${project.archives_base_name}-${project.mod_version}-${project.minecraft_version}-${project.multi_suffix}.jar"
     outputDir = "build/libs/merged"
     forge {
         projectName = "forge"
-        jarLocation =  "build/libs/${project.archives_base_name}-${project.mod_version}-${project.minecraft_version}-${project.forge_suffix}.jar"
+        jarLocation = "build/libs/${project.archives_base_name}-${project.mod_version}-${project.minecraft_version}-${project.forge_suffix}.jar"
     }
     fabric {
         projectName = "fabric"
-        jarLocation =  "build/libs/${project.archives_base_name}-${project.mod_version}-${project.minecraft_version}-${project.fabric_suffix}.jar"
+        jarLocation = "build/libs/${project.archives_base_name}-${project.mod_version}-${project.minecraft_version}-${project.fabric_suffix}.jar"
     }
     quilt {
         projectName = 'quilt'
-        jarLocation =  "build/libs/${project.archives_base_name}-${project.mod_version}-${project.minecraft_version}-${project.quilt_suffix}.jar"
-    }
-}
-//By Brenden Delano (Creep3rcrafter/Snakeman51002) 2022
-task rename {
-    ext.renameResources = { String toReplace, String replaceWith, File file ->
-        if (!toReplace.equals(replaceWith)) {
-            File newFile = file;
-            if (file.toString().contains(toReplace)) {
-                System.out.println("${file}     <- Previous");
-                newFile = new File(file.toString().replaceAll(toReplace, replaceWith));
-                file.renameTo(newFile);
-                System.out.println("${newFile}      <- Changed");
-            }
-            if (newFile.isDirectory()) {
-                for (int i = 0; i < newFile.listFiles().length; i++) {
-                    renameResources(toReplace, replaceWith, newFile.listFiles()[i]);
-                }
-            }
-        }
-    }
-    doLast {
-        // One is for lower case and the other is for case sensitive.
-        // Dont put spaces and other stupid things im not responsible.
-        // Only renames files and folders does not rename text inside files,
-        // that's what "Intellij Replace In Files" is for
-        // also its pretty dangerous but yea....
-
-        //             (What it is, What it should be, Project dir)
-        renameResources("projectiles","projectiles", file(project.projectDir))
-        renameResources("Projectiles","Projectiles", file(project.projectDir))
+        jarLocation = "build/libs/${project.archives_base_name}-${project.mod_version}-${project.minecraft_version}-${project.quilt_suffix}.jar"
     }
 }
 
@@ -78,9 +63,9 @@ allprojects {
     apply plugin: "maven-publish"
     apply plugin: "com.matthewprenger.cursegradle"
 
-    archivesBaseName = rootProject.archives_base_name
-    version = rootProject.mod_version
-    group = rootProject.maven_group
+    archivesBaseName = archives_base_name
+    version = mod_version
+    group = maven_group
 
     repositories {
         maven {
@@ -98,7 +83,7 @@ allprojects {
     }
 }
 tasks.getByName('modrinth').dependsOn(':clean', ':build', ':mergeJars', ':quilt:modrinth', ':fabric:modrinth', ':forge:modrinth')
-modrinth{
+modrinth {
     token = System.getenv("MODRINTH_TOKEN")
     versionName = "${project.archives_base_name}-${project.mod_version}-${project.minecraft_version}-${project.multi_suffix}"
     projectId = modrinth_id
@@ -108,13 +93,13 @@ modrinth{
     gameVersions = [project.minecraft_version]
     loaders = enabled_platforms.split(',').toList()
     changelog = project.changelog
-    dependencies{
+    dependencies {
         optional.version forge_modrinth_dependancies
         optional.version fabric_modrinth_dependancies
     }
     debugMode = multi_debug.toBoolean()
 }
-curseforge{
+curseforge {
     apiKey = System.getenv("CURSEFORGE_API")
     project {
         id = project.curseforge_id
@@ -127,12 +112,12 @@ curseforge{
         relations {
             requiredDependency project.curseforge_dependency
         }
-        mainArtifact(forgix.getOutputDir() + "/" + forgix.getMergedJarName()){
+        mainArtifact(forgix.getOutputDir() + "/" + forgix.getMergedJarName()) {
             displayName = "${project.archives_base_name}-${project.mod_version}-${project.minecraft_version}-${project.multi_suffix}"
         }
 
     }
-    options{
+    options {
         debug = project.multi_debug.toBoolean()
     }
 }

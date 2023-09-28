@@ -1,6 +1,6 @@
 package net.creep3rcrafter.projectiles.item;
 
-import net.creep3rcrafter.projectiles.projectile.NetherQuartzArrow;
+import net.creep3rcrafter.projectiles.entity.projectile.NetherQuartzArrow;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
@@ -17,6 +17,7 @@ public class NetherQuartzArrowItem extends CustomArrowItem {
         arrow.setBaseDamage(getBaseDamage());
         return arrow;
     }
+
     @Override
     public double getBaseDamage() {
         return 4D;

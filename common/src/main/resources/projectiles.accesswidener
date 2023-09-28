@@ -4,3 +4,10 @@ accessible field net/minecraft/world/entity/projectile/AbstractArrow life I
 accessible method net/minecraft/world/entity/npc/VillagerTrades toIntMap (Lcom/google/common/collect/ImmutableMap;)Lit/unimi/dsi/fastutil/ints/Int2ObjectMap;
 accessible class net/minecraft/world/entity/npc/VillagerTrades$EmeraldForItems
 accessible class net/minecraft/world/entity/npc/VillagerTrades$ItemsForEmeralds
+extendable method net/minecraft/world/item/CrossbowItem getArrow (Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/entity/projectile/AbstractArrow;
+extendable method net/minecraft/world/item/CrossbowItem getChargedProjectiles (Lnet/minecraft/world/item/ItemStack;)Ljava/util/List;
+extendable method net/minecraft/world/item/CrossbowItem getShotPitches (Lnet/minecraft/util/RandomSource;)[F
+extendable method net/minecraft/world/item/CrossbowItem onCrossbowShot (Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/item/ItemStack;)V
+accessible field net/minecraft/world/item/CrossbowItem startSoundPlayed Z
+accessible field net/minecraft/world/item/CrossbowItem midLoadSoundPlayed Z
+extendable method net/minecraft/world/item/CrossbowItem getShootingPower (Lnet/minecraft/world/item/ItemStack;)F

@@ -17,5 +17,6 @@
   "item.projectiles.tnt_arrow": "Dynamite Arrow",
   "item.projectiles.ender_arrow": "Ender Arrow",
   "item.projectiles.echo_arrow": "Echo Arrow",
-  "item.projectiles.soul_arrow": "Soul Arrow"
+  "item.projectiles.soul_arrow": "Soul Arrow",
+  "item.projectiles.dynamite": "Dynamite"
 }

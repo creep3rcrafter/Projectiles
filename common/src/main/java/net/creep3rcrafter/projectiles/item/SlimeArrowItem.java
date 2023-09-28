@@ -1,6 +1,6 @@
 package net.creep3rcrafter.projectiles.item;
 
-import net.creep3rcrafter.projectiles.projectile.SlimeArrow;
+import net.creep3rcrafter.projectiles.entity.projectile.SlimeArrow;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
@@ -25,10 +25,12 @@ public class SlimeArrowItem extends CustomArrowItem {
         arrow.setKnockback(0);
         return arrow;
     }
+
     @Override
     public double getBaseDamage() {
         return 1D;
     }
+
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, @NotNull List<Component> list, @NotNull TooltipFlag tooltipFlag) {
         list.add(Component.translatable("Base Knockback: " + SlimeArrow.BASE_KNOCKBACK).withStyle(ChatFormatting.GREEN));

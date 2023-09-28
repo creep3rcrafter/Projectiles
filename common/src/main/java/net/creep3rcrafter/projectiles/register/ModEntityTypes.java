@@ -2,8 +2,8 @@ package net.creep3rcrafter.projectiles.register;
 
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.creep3rcrafter.projectiles.projectile.*;
 import net.creep3rcrafter.projectiles.Projectiles;
+import net.creep3rcrafter.projectiles.entity.projectile.*;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -54,11 +54,9 @@ public class ModEntityTypes {
     public static final RegistrySupplier<EntityType<TNTArrow>> TNT_ARROW = ENTITY_TYPES.register("tnt_arrow", () ->
             EntityType.Builder.<TNTArrow>of(TNTArrow::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build(
                     new ResourceLocation(Projectiles.MOD_ID, "tnt_arrow").toString()));
-
     public static final RegistrySupplier<EntityType<WoodArrow>> WOOD_ARROW = ENTITY_TYPES.register("wood_arrow", () ->
             EntityType.Builder.<WoodArrow>of(WoodArrow::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build(
                     new ResourceLocation(Projectiles.MOD_ID, "wood_arrow").toString()));
-
     public static final RegistrySupplier<EntityType<BoneArrow>> BONE_ARROW = ENTITY_TYPES.register("bone_arrow", () ->
             EntityType.Builder.<BoneArrow>of(BoneArrow::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build(
                     new ResourceLocation(Projectiles.MOD_ID, "bone_arrow").toString()));
@@ -71,4 +69,13 @@ public class ModEntityTypes {
     public static final RegistrySupplier<EntityType<ChorusArrow>> CHORUS_ARROW = ENTITY_TYPES.register("chorus_arrow", () ->
             EntityType.Builder.<ChorusArrow>of(ChorusArrow::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build(
                     new ResourceLocation(Projectiles.MOD_ID, "chorus_arrow").toString()));
+    public static final RegistrySupplier<EntityType<Dynamite>> DYNAMITE = ENTITY_TYPES.register("dynamite", () ->
+            EntityType.Builder.<Dynamite>of(Dynamite::new, MobCategory.MISC).sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build(
+                    new ResourceLocation(Projectiles.MOD_ID, "dynamite").toString()));
+    /*
+    public static final RegistrySupplier<EntityType<Lasso>> LASSO = ENTITY_TYPES.register("lasso", () ->
+            EntityType.Builder.<Lasso>of(Lasso::new, MobCategory.MISC).sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build(
+                    new ResourceLocation(Projectiles.MOD_ID, "lasso").toString()));
+
+     */
 }

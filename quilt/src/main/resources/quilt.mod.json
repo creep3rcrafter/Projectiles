@@ -8,16 +8,18 @@
     "group": "${group}",
     "id": "projectiles",
     "version": "${version}",
-    "name": "Projectiles (Quilt)",
-    "description": "",
-    "authors": ["Creep3rCrafter"],
-    "contact": {
-      "sources": ""
+    "metadata": {
+      "name": "Projectiles (Quilt)",
+      "description": "",
+      "contributors": {
+
+      },
+      "contact": {
+        "sources": "https://github.com/creep3rcrafter/Mystic-Potions"
+      },
+      "icon": "assets/projectiles/logo.png"
     },
-    "license": "All Rights Reserved",
-    "icon": "assets/projectiles/logo.png",
     "intermediate_mappings": "net.fabricmc:intermediary",
-    "environment": "*",
     "entrypoints": {
       "init": [
         "net.creep3rcrafter.projectiles.quilt.ProjectilesQuilt"
@@ -26,7 +28,7 @@
     "depends": [
       {
         "id": "quilt_loader",
-        "version": "*"
+        "version": "<=${quiltLoaderVersion}"
       },
       {
         "id": "quilt_base",
@@ -34,11 +36,11 @@
       },
       {
         "id": "minecraft",
-        "version": ">=1.19.2"
+        "version": ">=${minecraftVersion}"
       },
       {
         "id": "architectury",
-        "version": ">=6.2.43"
+        "version": ">=${architecturyVersion}"
       }
     ]
   }

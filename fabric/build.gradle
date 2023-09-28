@@ -21,10 +21,27 @@ configurations {
 }
 
 dependencies {
+    repositories {
+        maven {
+            url "https://cursemaven.com"
+        }
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = "Modrinth"
+                    url = "https://api.modrinth.com/maven"
+                }
+            }
+            filter {
+                includeGroup "maven.modrinth"
+            }
+        }
+    }
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
+    modApi "maven.modrinth:jei:11.6.0.1018"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
@@ -33,10 +50,16 @@ dependencies {
 }
 
 processResources {
+    inputs.property "group", maven_group
     inputs.property "version", project.version
+    inputs.property "architecturyVersion", architectury_version
+    inputs.property "minecraftVersion", minecraft_version
 
     filesMatching("fabric.mod.json") {
-        expand "version": project.version
+        expand "group": maven_group,
+                "version": version,
+                "architecturyVersion": architectury_version,
+                "minecraftVersion": minecraft_version
     }
 }
 
@@ -51,7 +74,7 @@ remapJar {
     injectAccessWidener = true
     input.set shadowJar.archiveFile
     dependsOn shadowJar
-    classifier "${rootProject.minecraft_version}-Fabric"
+    classifier "${minecraft_version}-${fabric_suffix}"
 }
 
 jar {
@@ -83,7 +106,7 @@ publishing {
         // Add repositories to publish to here.
     }
 }
-modrinth{
+modrinth {
     token = System.getenv("MODRINTH_TOKEN")
     versionName = "${project.archives_base_name}-${project.mod_version}-${project.minecraft_version}-${project.fabric_suffix}"
     projectId = project.modrinth_id
@@ -93,13 +116,13 @@ modrinth{
     gameVersions = [project.minecraft_version]
     loaders = ['fabric']
     changelog = project.changelog
-    dependencies{
+    dependencies {
         required.version project.fabric_modrinth_dependancies
     }
     debugMode = fabric_debug.toBoolean()
 }
 tasks.getByName('curseforge').dependsOn(':build', ':fabric:remapJar')
-curseforge{
+curseforge {
     apiKey = System.getenv("CURSEFORGE_API")
     project {
         id = project.curseforge_id
@@ -110,12 +133,12 @@ curseforge{
         relations {
             requiredDependency project.curseforge_dependency
         }
-        mainArtifact(remapJar){
+        mainArtifact(remapJar) {
             displayName = "${project.archives_base_name}-${project.mod_version}-${project.minecraft_version}-${project.fabric_suffix}"
         }
 
     }
-    options{
+    options {
         debug = project.fabric_debug.toBoolean()
     }
 }

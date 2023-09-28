@@ -1,20 +1,21 @@
-    package net.creep3rcrafter.projectiles.client.render.entity;
+package net.creep3rcrafter.projectiles.client.render.entity;
 
-import net.creep3rcrafter.projectiles.projectile.BambooArrow;
-import net.creep3rcrafter.projectiles.projectile.BoneArrow;
+import net.creep3rcrafter.projectiles.entity.projectile.BambooArrow;
 import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
 public class BambooArrowRenderer extends ArrowRenderer<BambooArrow> {
     public static final ResourceLocation ARROW_LOCATION =
-            new ResourceLocation("textures/entity/projectiles/spectral_arrow.png");
+            new ResourceLocation("projectiles", "textures/entity/projectiles/bamboo_arrow.png");
 
     public BambooArrowRenderer(EntityRendererProvider.Context context) {
         super(context);
     }
 
-    public ResourceLocation getTextureLocation(BambooArrow arrow) {
+    @Override
+    public @NotNull ResourceLocation getTextureLocation(BambooArrow arrow) {
         return ARROW_LOCATION;
     }
 

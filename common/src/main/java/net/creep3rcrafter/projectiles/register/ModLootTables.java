@@ -10,7 +10,7 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 public class ModLootTables {
     static {
         LootEvent.MODIFY_LOOT_TABLE.register((lootTables, id, context, builtin) -> {
-            if (builtin && BuiltInLootTables.ANCIENT_CITY.equals(id)){
+            if (builtin && BuiltInLootTables.ANCIENT_CITY.equals(id)) {
                 LootPool.Builder pool = LootPool.lootPool()
                         .add(LootItem.lootTableItem(ModItems.ECHO_ARROW.get()).setWeight(1))
                         .add(LootItem.lootTableItem(ModItems.AMETHYST_ARROW.get()).setWeight(1))
@@ -21,7 +21,7 @@ public class ModLootTables {
             }
         });
         LootEvent.MODIFY_LOOT_TABLE.register((lootTables, id, context, builtin) -> {
-            if (builtin && BuiltInLootTables.ABANDONED_MINESHAFT.equals(id)){
+            if (builtin && BuiltInLootTables.ABANDONED_MINESHAFT.equals(id)) {
                 LootPool.Builder pool = LootPool.lootPool()
                         .add(LootItem.lootTableItem(ModItems.IRON_ARROW.get()).setWeight(1))
                         .add(LootItem.lootTableItem(ModItems.GOLD_ARROW.get()).setWeight(1))
@@ -37,7 +37,7 @@ public class ModLootTables {
             }
         });
         LootEvent.MODIFY_LOOT_TABLE.register((lootTables, id, context, builtin) -> {
-            if (builtin && BuiltInLootTables.BURIED_TREASURE.equals(id)){
+            if (builtin && BuiltInLootTables.BURIED_TREASURE.equals(id)) {
                 LootPool.Builder pool = LootPool.lootPool()
                         .add(LootItem.lootTableItem(ModItems.PRISMARINE_ARROW.get()).setWeight(1))
                         .add(EmptyLootItem.emptyItem().setWeight(1))
@@ -46,7 +46,7 @@ public class ModLootTables {
             }
         });
         LootEvent.MODIFY_LOOT_TABLE.register((lootTables, id, context, builtin) -> {
-            if (builtin && BuiltInLootTables.VILLAGE_FLETCHER.equals(id)){
+            if (builtin && BuiltInLootTables.VILLAGE_FLETCHER.equals(id)) {
                 LootPool.Builder pool = LootPool.lootPool()
                         .add(LootItem.lootTableItem(ModItems.TNT_ARROW.get()).setWeight(1))
                         .add(LootItem.lootTableItem(ModItems.SLIME_ARROW.get()).setWeight(1))
@@ -65,7 +65,7 @@ public class ModLootTables {
             }
         });
         LootEvent.MODIFY_LOOT_TABLE.register((lootTables, id, context, builtin) -> {
-            if (builtin && BuiltInLootTables.BASTION_TREASURE.equals(id)){
+            if (builtin && BuiltInLootTables.BASTION_TREASURE.equals(id)) {
                 LootPool.Builder pool = LootPool.lootPool()
                         .add(LootItem.lootTableItem(ModItems.NETHER_QUARTZ_ARROW.get()).setWeight(2))
                         .add(LootItem.lootTableItem(ModItems.GOLD_ARROW.get()).setWeight(2))
@@ -78,7 +78,7 @@ public class ModLootTables {
             }
         });
         LootEvent.MODIFY_LOOT_TABLE.register((lootTables, id, context, builtin) -> {
-            if (builtin && BuiltInLootTables.PILLAGER_OUTPOST.equals(id)){
+            if (builtin && BuiltInLootTables.PILLAGER_OUTPOST.equals(id)) {
                 LootPool.Builder pool = LootPool.lootPool()
                         .add(LootItem.lootTableItem(ModItems.TNT_ARROW.get()).setWeight(1))
                         .add(LootItem.lootTableItem(ModItems.IRON_ARROW.get()).setWeight(1))
@@ -89,7 +89,7 @@ public class ModLootTables {
             }
         });
         LootEvent.MODIFY_LOOT_TABLE.register((lootTables, id, context, builtin) -> {
-            if (builtin && BuiltInLootTables.DESERT_PYRAMID.equals(id)){
+            if (builtin && BuiltInLootTables.DESERT_PYRAMID.equals(id)) {
                 LootPool.Builder pool = LootPool.lootPool()
                         .add(LootItem.lootTableItem(ModItems.TNT_ARROW.get()).setWeight(1))
                         .add(LootItem.lootTableItem(ModItems.IRON_ARROW.get()).setWeight(1))
@@ -102,7 +102,7 @@ public class ModLootTables {
             }
         });
         LootEvent.MODIFY_LOOT_TABLE.register((lootTables, id, context, builtin) -> {
-            if (builtin && BuiltInLootTables.END_CITY_TREASURE.equals(id)){
+            if (builtin && BuiltInLootTables.END_CITY_TREASURE.equals(id)) {
                 LootPool.Builder pool = LootPool.lootPool()
                         .add(LootItem.lootTableItem(ModItems.ENDER_ARROW.get()).setWeight(1))
                         .add(LootItem.lootTableItem(ModItems.CHORUS_ARROW.get()).setWeight(1))
@@ -112,7 +112,7 @@ public class ModLootTables {
             }
         });
         LootEvent.MODIFY_LOOT_TABLE.register((lootTables, id, context, builtin) -> {
-            if (builtin && BuiltInLootTables.RUINED_PORTAL.equals(id)){
+            if (builtin && BuiltInLootTables.RUINED_PORTAL.equals(id)) {
                 LootPool.Builder pool = LootPool.lootPool()
                         .add(LootItem.lootTableItem(ModItems.GOLD_ARROW.get()).setWeight(2))
                         .add(LootItem.lootTableItem(ModItems.SOUL_ARROW.get()).setWeight(1))
@@ -123,7 +123,7 @@ public class ModLootTables {
             }
         });
         LootEvent.MODIFY_LOOT_TABLE.register((lootTables, id, context, builtin) -> {
-            if (builtin && BuiltInLootTables.WOODLAND_MANSION.equals(id)){
+            if (builtin && BuiltInLootTables.WOODLAND_MANSION.equals(id)) {
                 LootPool.Builder pool = LootPool.lootPool()
                         .add(LootItem.lootTableItem(ModItems.IRON_ARROW.get()).setWeight(1))
                         .add(LootItem.lootTableItem(ModItems.GOLD_ARROW.get()).setWeight(1))
@@ -136,7 +136,7 @@ public class ModLootTables {
             }
         });
         LootEvent.MODIFY_LOOT_TABLE.register((lootTables, id, context, builtin) -> {
-            if (builtin && BuiltInLootTables.JUNGLE_TEMPLE.equals(id)){
+            if (builtin && BuiltInLootTables.JUNGLE_TEMPLE.equals(id)) {
                 LootPool.Builder pool = LootPool.lootPool()
                         .add(LootItem.lootTableItem(ModItems.BAMBOO_ARROW.get()).setWeight(1))
                         .add(LootItem.lootTableItem(ModItems.BONE_ARROW.get()).setWeight(1))
@@ -146,7 +146,7 @@ public class ModLootTables {
             }
         });
         LootEvent.MODIFY_LOOT_TABLE.register((lootTables, id, context, builtin) -> {
-            if (builtin && BuiltInLootTables.JUNGLE_TEMPLE_DISPENSER.equals(id)){
+            if (builtin && BuiltInLootTables.JUNGLE_TEMPLE_DISPENSER.equals(id)) {
                 LootPool.Builder pool = LootPool.lootPool()
                         .add(LootItem.lootTableItem(ModItems.BAMBOO_ARROW.get()).setWeight(1))
                         .add(LootItem.lootTableItem(ModItems.BONE_ARROW.get()).setWeight(1))

@@ -1,6 +1,6 @@
 package net.creep3rcrafter.projectiles.item;
 
-import net.creep3rcrafter.projectiles.projectile.EchoArrow;
+import net.creep3rcrafter.projectiles.entity.projectile.EchoArrow;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
@@ -25,10 +25,12 @@ public class EchoArrowItem extends CustomArrowItem {
         arrow.setBaseDamage(getBaseDamage());
         return arrow;
     }
+
     @Override
     public double getBaseDamage() {
         return 3.5D;
     }
+
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, @NotNull List<Component> list, @NotNull TooltipFlag tooltipFlag) {
         list.add(Component.translatable("Sonic Damage: 5").withStyle(ChatFormatting.AQUA));

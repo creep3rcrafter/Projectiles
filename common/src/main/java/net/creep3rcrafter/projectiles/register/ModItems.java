@@ -2,14 +2,12 @@ package net.creep3rcrafter.projectiles.register;
 
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.creep3rcrafter.projectiles.item.*;
 import net.creep3rcrafter.projectiles.Projectiles;
+import net.creep3rcrafter.projectiles.item.*;
 import net.minecraft.core.Registry;
-import net.minecraft.world.entity.projectile.Snowball;
+import net.minecraft.world.item.ArrowItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-
-import java.util.Comparator;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Projectiles.MOD_ID, Registry.ITEM_REGISTRY);
@@ -33,42 +31,50 @@ public class ModItems {
     // ender arrow text, chorus text, cobweb text, copper text
     // diamond arrow and gold arrow do same damage
 
-    public static final RegistrySupplier<WoodArrowItem> WOOD_ARROW = ITEMS.register("wood_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> WOOD_ARROW = ITEMS.register("wood_arrow", () ->
             new WoodArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<BambooArrowItem> BAMBOO_ARROW = ITEMS.register("bamboo_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> BAMBOO_ARROW = ITEMS.register("bamboo_arrow", () ->
             new BambooArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<BoneArrowItem> BONE_ARROW = ITEMS.register("bone_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> BONE_ARROW = ITEMS.register("bone_arrow", () ->
             new BoneArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<CopperArrowItem> COPPER_ARROW = ITEMS.register("copper_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> COPPER_ARROW = ITEMS.register("copper_arrow", () ->
             new CopperArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<IronArrowItem> IRON_ARROW = ITEMS.register("iron_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> IRON_ARROW = ITEMS.register("iron_arrow", () ->
             new IronArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<GoldArrowItem> GOLD_ARROW = ITEMS.register("gold_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> GOLD_ARROW = ITEMS.register("gold_arrow", () ->
             new GoldArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<DiamondArrowItem> DIAMOND_ARROW = ITEMS.register("diamond_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> DIAMOND_ARROW = ITEMS.register("diamond_arrow", () ->
             new DiamondArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<NetheriteArrowItem> NETHERITE_ARROW = ITEMS.register("netherite_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> NETHERITE_ARROW = ITEMS.register("netherite_arrow", () ->
             new NetheriteArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<ObsidianArrowItem> OBSIDIAN_ARROW = ITEMS.register("obsidian_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> OBSIDIAN_ARROW = ITEMS.register("obsidian_arrow", () ->
             new ObsidianArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<NetherQuartzArrowItem> NETHER_QUARTZ_ARROW = ITEMS.register("nether_quartz_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> NETHER_QUARTZ_ARROW = ITEMS.register("nether_quartz_arrow", () ->
             new NetherQuartzArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<AmethystArrowItem> AMETHYST_ARROW = ITEMS.register("amethyst_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> AMETHYST_ARROW = ITEMS.register("amethyst_arrow", () ->
             new AmethystArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<PrismarineArrowItem> PRISMARINE_ARROW = ITEMS.register("prismarine_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> PRISMARINE_ARROW = ITEMS.register("prismarine_arrow", () ->
             new PrismarineArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<SlimeArrowItem> SLIME_ARROW = ITEMS.register("slime_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> SLIME_ARROW = ITEMS.register("slime_arrow", () ->
             new SlimeArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<CobwebArrowItem> COBWEB_ARROW = ITEMS.register("cobweb_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> COBWEB_ARROW = ITEMS.register("cobweb_arrow", () ->
             new CobwebArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<ChorusArrowItem> CHORUS_ARROW = ITEMS.register("chorus_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> CHORUS_ARROW = ITEMS.register("chorus_arrow", () ->
             new ChorusArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<TNTArrowItem> TNT_ARROW = ITEMS.register("tnt_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> TNT_ARROW = ITEMS.register("tnt_arrow", () ->
             new TNTArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<EnderArrowItem> ENDER_ARROW = ITEMS.register("ender_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> ENDER_ARROW = ITEMS.register("ender_arrow", () ->
             new EnderArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<EchoArrowItem> ECHO_ARROW = ITEMS.register("echo_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> ECHO_ARROW = ITEMS.register("echo_arrow", () ->
             new EchoArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistrySupplier<SoulArrowItem> SOUL_ARROW = ITEMS.register("soul_arrow", () ->
+    public static final RegistrySupplier<ArrowItem> SOUL_ARROW = ITEMS.register("soul_arrow", () ->
             new SoulArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
+    public static final RegistrySupplier<Item> DYNAMITE = ITEMS.register("dynamite", () ->
+            new DynamiteItem(new Item.Properties().stacksTo(16).tab(CreativeModeTab.TAB_COMBAT)));
+    public static final RegistrySupplier<Item> LAUNCHER = ITEMS.register("launcher", () ->
+            new LauncherItem(new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_COMBAT).durability(465)));
+    /*
+    public static final RegistrySupplier<Item> LASSO = ITEMS.register("lasso", () ->
+            new LassoItem(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS)));
+     */
 }

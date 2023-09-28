@@ -1,20 +1,21 @@
 package net.creep3rcrafter.projectiles.client.render.entity;
 
-import net.creep3rcrafter.projectiles.projectile.AmethystArrow;
-import net.creep3rcrafter.projectiles.projectile.WoodArrow;
+import net.creep3rcrafter.projectiles.entity.projectile.WoodArrow;
 import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
 public class WoodArrowRenderer extends ArrowRenderer<WoodArrow> {
     public static final ResourceLocation ARROW_LOCATION =
-            new ResourceLocation("textures/entity/projectiles/spectral_arrow.png");
+            new ResourceLocation("projectiles", "textures/entity/projectiles/wood_arrow.png");
 
     public WoodArrowRenderer(EntityRendererProvider.Context context) {
         super(context);
     }
 
-    public ResourceLocation getTextureLocation(WoodArrow arrow) {
+    @Override
+    public @NotNull ResourceLocation getTextureLocation(WoodArrow arrow) {
         return ARROW_LOCATION;
     }
 
