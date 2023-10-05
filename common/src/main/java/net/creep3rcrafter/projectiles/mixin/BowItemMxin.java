@@ -1,4 +1,4 @@
-package net.creep3rcrafter.projectiles.mixins;
+package net.creep3rcrafter.projectiles.mixin;
 
 import net.minecraft.world.item.BowItem;
 import org.spongepowered.asm.mixin.Mixin;
