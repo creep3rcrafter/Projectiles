@@ -14,6 +14,7 @@ import net.minecraft.world.entity.projectile.*;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -131,12 +132,12 @@ public class LauncherItem extends CrossbowItem {
     }
 
     @Override
-    public Predicate<ItemStack> getSupportedHeldProjectiles() {
+    public @NotNull Predicate<ItemStack> getSupportedHeldProjectiles() {
         return VALID_PROJECTILES;
     }
 
     @Override
-    public Predicate<ItemStack> getAllSupportedProjectiles() {
+    public @NotNull Predicate<ItemStack> getAllSupportedProjectiles() {
         return VALID_PROJECTILES;
     }
 

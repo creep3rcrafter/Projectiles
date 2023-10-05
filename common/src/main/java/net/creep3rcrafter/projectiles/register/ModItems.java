@@ -28,8 +28,8 @@ public class ModItems {
     //slingshot > shoots seeds and buttons
     //slime not compatible with punch bows - fixed
     //lead arrow
-    // ender arrow text, chorus text, cobweb text, copper text
-    // diamond arrow and gold arrow do same damage
+    //ender arrow text, chorus text, cobweb text, copper text
+    //diamond arrow and gold arrow do same damage
 
     public static final RegistrySupplier<ArrowItem> WOOD_ARROW = ITEMS.register("wood_arrow", () ->
             new WoodArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
@@ -71,9 +71,9 @@ public class ModItems {
             new SoulArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
     public static final RegistrySupplier<Item> DYNAMITE = ITEMS.register("dynamite", () ->
             new DynamiteItem(new Item.Properties().stacksTo(16).tab(CreativeModeTab.TAB_COMBAT)));
+    /*
     public static final RegistrySupplier<Item> LAUNCHER = ITEMS.register("launcher", () ->
             new LauncherItem(new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_COMBAT).durability(465)));
-    /*
     public static final RegistrySupplier<Item> LASSO = ITEMS.register("lasso", () ->
             new LassoItem(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS)));
      */
