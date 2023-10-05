@@ -55,7 +55,7 @@ public class Dynamite extends ThrowableItemProjectile {
     protected void onHitEntity(EntityHitResult entityHitResult) {
         super.onHitEntity(entityHitResult);
         Entity entity = entityHitResult.getEntity();
-        entity.hurt(DamageSource.thrown(this, this.getOwner()), (float) 1);
+        entity.hurt(this.damageSources().thrown(this, this.getOwner()), (float) 1);
         Utils.explode(this.level, entityHitResult.getEntity().blockPosition(), 2f);
         discard();
     }

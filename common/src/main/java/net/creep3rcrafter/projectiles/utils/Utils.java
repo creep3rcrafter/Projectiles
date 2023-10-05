@@ -1,6 +1,7 @@
 package net.creep3rcrafter.projectiles.utils;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -109,7 +110,7 @@ public class Utils {
             recipe.getIngredients().forEach(ingredient -> {
                 for (Item item : containsList) {
                     if (ingredient.test(new ItemStack(item))) {
-                        results.add(recipe.getResultItem().getItem());
+                        results.add(recipe.getResultItem(RegistryAccess.EMPTY).getItem());
                     }
                 }
             });
