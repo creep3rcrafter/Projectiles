@@ -1,19 +1,15 @@
 package net.creep3rcrafter.projectiles.item;
-import com.mojang.math.Quaternion;
-import com.mojang.math.Vector3f;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.monster.Blaze;
 import net.minecraft.world.entity.monster.CrossbowAttackMob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.*;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -93,13 +89,6 @@ public class LauncherItem extends CrossbowItem {
 
             if (livingEntity instanceof CrossbowAttackMob crossbowAttackMob) {
                 crossbowAttackMob.shootCrossbowProjectile(crossbowAttackMob.getTarget(), itemStack, (Projectile) projectile, i);
-            } else {
-                Vec3 vec3 = livingEntity.getUpVector(1.0F);
-                Quaternion quaternion = new Quaternion(new Vector3f(vec3), i, true);
-                Vec3 vec32 = livingEntity.getViewVector(1.0F);
-                Vector3f vector3f = new Vector3f(vec32);
-                vector3f.transform(quaternion);
-                ((Projectile) projectile).shoot(vector3f.x(), vector3f.y(), vector3f.z(), g, h);
             }
 
             itemStack.hurtAndBreak(firework ? 3 : 1, livingEntity, (livingEntityx) -> {
