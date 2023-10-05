@@ -42,10 +42,10 @@ public class EchoArrow extends AbstractArrow {
     @Override
     protected void onHitEntity(EntityHitResult entityHitResult) {
         super.onHitEntity(entityHitResult);
-        if (!this.level.isClientSide) {
+        if (!this.level().isClientSide) {
             float range = 20;
-            if (level.getServer().getLevel(level.dimension()) != null) {
-                ServerLevel serverLevel = level.getServer().getLevel(level.dimension());
+            if (level().getServer().getLevel(level().dimension()) != null) {
+                ServerLevel serverLevel = level().getServer().getLevel(level().dimension());
                 LivingEntity livingEntity;
                 if (serverLevel.getNearestPlayer(this, range) != null && serverLevel.getNearestPlayer(this, range) != this.getOwner()) {
                     livingEntity = serverLevel.getNearestPlayer(this, range);
@@ -81,10 +81,10 @@ public class EchoArrow extends AbstractArrow {
     protected void onHitBlock(BlockHitResult blockHitResult) {
         super.onHitBlock(blockHitResult);
         float range = 20;
-        if (!this.level.isClientSide) {
-            if (level.getServer().getLevel(level.dimension()) != null) {
+        if (!this.level().isClientSide) {
+            if (level().getServer().getLevel(level().dimension()) != null) {
                 if (this.getOwner() != null) {
-                    ServerLevel serverLevel = level.getServer().getLevel(level.dimension());
+                    ServerLevel serverLevel = level().getServer().getLevel(level().dimension());
                     LivingEntity livingEntity;
                     if (serverLevel.getNearestPlayer(this, range) != null && serverLevel.getNearestPlayer(this, range) != this.getOwner()) {
                         livingEntity = serverLevel.getNearestPlayer(this, range);

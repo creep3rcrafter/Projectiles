@@ -28,7 +28,7 @@ public class EnderArrow extends AbstractArrow {
     @Override
     protected void onHitEntity(EntityHitResult entityHitResult) {
         super.onHitEntity(entityHitResult);
-        if (!this.level.isClientSide) {
+        if (!this.level().isClientSide) {
             if (this.getOwner() != null) {
                 this.playSound(SoundEvents.ENDERMAN_TELEPORT);
                 this.getOwner().teleportTo(this.position().x, this.position().y, this.position().z);
@@ -40,7 +40,7 @@ public class EnderArrow extends AbstractArrow {
     @Override
     protected void onHitBlock(BlockHitResult blockHitResult) {
         super.onHitBlock(blockHitResult);
-        if (!this.level.isClientSide) {
+        if (!this.level().isClientSide) {
             if (this.getOwner() != null) {
                 this.playSound(SoundEvents.ENDERMAN_TELEPORT);
                 this.getOwner().teleportTo(this.position().x, this.position().y, this.position().z);

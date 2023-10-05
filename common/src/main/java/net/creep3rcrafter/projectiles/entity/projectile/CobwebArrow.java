@@ -32,9 +32,9 @@ public class CobwebArrow extends AbstractArrow {
     @Override
     protected void onHitEntity(EntityHitResult entityHitResult) {
         super.onHitEntity(entityHitResult);
-        if (!this.level.isClientSide) {
-            ServerLevel serverLevel = this.level.getServer().getLevel(level.dimension());
-            if (serverLevel.getBlockState(entityHitResult.getEntity().blockPosition()).getMaterial().isReplaceable()) {
+        if (!this.level().isClientSide) {
+            ServerLevel serverLevel = this.level().getServer().getLevel(level().dimension());
+            if (serverLevel.getBlockState(entityHitResult.getEntity().blockPosition()).canBeReplaced()) {
                 serverLevel.setBlock(entityHitResult.getEntity().blockPosition(), Blocks.COBWEB.defaultBlockState(), 3);
             }
             this.discard();
@@ -42,11 +42,12 @@ public class CobwebArrow extends AbstractArrow {
     }
 
     @Override
+
     protected void onHitBlock(BlockHitResult blockHitResult) {
         super.onHitBlock(blockHitResult);
-        if (!this.level.isClientSide) {
-            ServerLevel serverLevel = this.level.getServer().getLevel(level.dimension());
-            if (serverLevel.getBlockState(this.blockPosition()).getMaterial().isReplaceable()) {
+        if (!this.level().isClientSide) {
+            ServerLevel serverLevel = this.level().getServer().getLevel(level().dimension());
+            if (serverLevel.getBlockState(this.blockPosition()).canBeReplaced()) {
                 serverLevel.setBlock(this.blockPosition(), Blocks.COBWEB.defaultBlockState(), 3);
             }
             this.discard();

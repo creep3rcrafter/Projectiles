@@ -46,7 +46,7 @@ public class Dynamite extends ThrowableItemProjectile {
             ParticleOptions particleOptions = this.getParticle();
 
             for (int i = 0; i < 8; ++i) {
-                this.level.addParticle(particleOptions, this.getX(), this.getY(), this.getZ(), 0.0, 0.0, 0.0);
+                this.level().addParticle(particleOptions, this.getX(), this.getY(), this.getZ(), 0.0, 0.0, 0.0);
             }
         }
 
@@ -56,15 +56,15 @@ public class Dynamite extends ThrowableItemProjectile {
         super.onHitEntity(entityHitResult);
         Entity entity = entityHitResult.getEntity();
         entity.hurt(this.damageSources().thrown(this, this.getOwner()), (float) 1);
-        Utils.explode(this.level, entityHitResult.getEntity().blockPosition(), 2f);
+        Utils.explode(this.level(), entityHitResult.getEntity().blockPosition(), 2f);
         discard();
     }
 
     @Override
     protected void onHitBlock(BlockHitResult blockHitResult) {
         super.onHitBlock(blockHitResult);
-        if (!this.level.isClientSide) {
-            Utils.explode(this.level, blockHitResult.getBlockPos(), 2f);
+        if (!this.level().isClientSide) {
+            Utils.explode(this.level(), blockHitResult.getBlockPos(), 2f);
             discard();
         }
     }

@@ -34,8 +34,8 @@ public class CopperArrow extends AbstractArrow {
     @Override
     protected void onHitEntity(EntityHitResult entityHitResult) {
         super.onHitEntity(entityHitResult);
-        if (!this.level.isClientSide) {
-            ServerLevel serverLevel = this.level.getServer().getLevel(this.level.dimension());
+        if (!this.level().isClientSide) {
+            ServerLevel serverLevel = this.level().getServer().getLevel(this.level().dimension());
             RandomSource random = serverLevel.getRandom();
             if (random.nextFloat() <= 0.5F) {
                 if (serverLevel.isThundering()) {
@@ -52,8 +52,8 @@ public class CopperArrow extends AbstractArrow {
     @Override
     protected void onHitBlock(BlockHitResult blockHitResult) {
         super.onHitBlock(blockHitResult);
-        if (!this.level.isClientSide) {
-            ServerLevel serverLevel = this.level.getServer().getLevel(this.level.dimension());
+        if (!this.level().isClientSide) {
+            ServerLevel serverLevel = this.level().getServer().getLevel(this.level().dimension());
             RandomSource random = serverLevel.getRandom();
             if (random.nextFloat() <= 0.5F) {
                 if (serverLevel.isThundering()) {

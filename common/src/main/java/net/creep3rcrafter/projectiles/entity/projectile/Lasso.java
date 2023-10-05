@@ -12,10 +12,8 @@ import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.LeadItem;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.HitResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -41,9 +39,9 @@ public class Lasso extends ThrowableItemProjectile {
         super.onHitEntity(entityHitResult);
         Player player = (Player) getOwner();
         BlockPos blockPos = entityHitResult.getEntity().blockPosition();
-        if (!level.isClientSide && player != null) {
-            LeadItem.bindPlayerMobs(player, entityHitResult.getEntity().getLevel(), blockPos);
-            level.gameEvent(GameEvent.BLOCK_ATTACH, blockPos, GameEvent.Context.of(player));
+        if (!level().isClientSide && player != null) {
+            LeadItem.bindPlayerMobs(player, entityHitResult.getEntity().level(), blockPos);
+            level().gameEvent(GameEvent.BLOCK_ATTACH, blockPos, GameEvent.Context.of(player));
             this.discard();
         }
     }
@@ -61,7 +59,7 @@ public class Lasso extends ThrowableItemProjectile {
     @Nullable
     public Entity changeDimension(ServerLevel serverLevel) {
         Entity entity = this.getOwner();
-        if (entity != null && entity.level.dimension() != serverLevel.dimension()) {
+        if (entity != null && entity.level().dimension() != serverLevel.dimension()) {
             this.setOwner(null);
         }
 

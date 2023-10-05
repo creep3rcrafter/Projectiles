@@ -30,7 +30,7 @@ public class SoulArrow extends AbstractArrow {
     @Override
     protected void onHitEntity(EntityHitResult entityHitResult) {
         super.onHitEntity(entityHitResult);
-        if (!this.level.isClientSide) {
+        if (!this.level().isClientSide) {
             discard();
         }
     }
@@ -38,7 +38,7 @@ public class SoulArrow extends AbstractArrow {
     @Override
     protected void onHitBlock(BlockHitResult blockHitResult) {
         super.onHitBlock(blockHitResult);
-        if (!this.level.isClientSide) {
+        if (!this.level().isClientSide) {
             discard();
         }
     }

@@ -36,7 +36,7 @@ public class ChorusArrow extends AbstractArrow {
     @Override
     protected void onHitEntity(EntityHitResult entityHitResult) {
         super.onHitEntity(entityHitResult);
-        if (!this.level.isClientSide) {
+        if (!this.level().isClientSide) {
             LivingEntity livingEntity = (LivingEntity) entityHitResult.getEntity();
             double d = livingEntity.getX();
             double e = livingEntity.getY();
@@ -44,7 +44,7 @@ public class ChorusArrow extends AbstractArrow {
 
             for (int i = 0; i < 16; ++i) {
                 double g = livingEntity.getX() + (livingEntity.getRandom().nextDouble() - 0.5) * 16.0;
-                double h = Mth.clamp(livingEntity.getY() + (double) (livingEntity.getRandom().nextInt(16) - 8), level.getMinBuildHeight(), level.getMinBuildHeight() + ((ServerLevel) level).getLogicalHeight() - 1);
+                double h = Mth.clamp(livingEntity.getY() + (double) (livingEntity.getRandom().nextInt(16) - 8), level().getMinBuildHeight(), level().getMinBuildHeight() + ((ServerLevel) level()).getLogicalHeight() - 1);
                 double j = livingEntity.getZ() + (livingEntity.getRandom().nextDouble() - 0.5) * 16.0;
                 if (livingEntity.isPassenger()) {
                     livingEntity.stopRiding();
@@ -52,9 +52,9 @@ public class ChorusArrow extends AbstractArrow {
 
                 Vec3 vec3 = livingEntity.position();
                 if (livingEntity.randomTeleport(g, h, j, true)) {
-                    level.gameEvent(GameEvent.TELEPORT, vec3, GameEvent.Context.of(livingEntity));
+                    level().gameEvent(GameEvent.TELEPORT, vec3, GameEvent.Context.of(livingEntity));
                     SoundEvent soundEvent = livingEntity instanceof Fox ? SoundEvents.FOX_TELEPORT : SoundEvents.CHORUS_FRUIT_TELEPORT;
-                    level.playSound(null, d, e, f, soundEvent, SoundSource.PLAYERS, 1.0F, 1.0F);
+                    level().playSound(null, d, e, f, soundEvent, SoundSource.PLAYERS, 1.0F, 1.0F);
                     livingEntity.playSound(soundEvent, 1.0F, 1.0F);
                     break;
                 }
@@ -67,7 +67,7 @@ public class ChorusArrow extends AbstractArrow {
     @Override
     protected void onHitBlock(BlockHitResult blockHitResult) {
         super.onHitBlock(blockHitResult);
-        if (!this.level.isClientSide) {
+        if (!this.level().isClientSide) {
             this.discard();
         }
     }

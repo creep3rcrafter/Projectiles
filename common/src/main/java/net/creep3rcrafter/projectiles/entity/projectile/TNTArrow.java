@@ -31,8 +31,8 @@ public class TNTArrow extends AbstractArrow {
     @Override
     protected void onHitEntity(EntityHitResult entityHitResult) {
         super.onHitEntity(entityHitResult);
-        if (!this.level.isClientSide) {
-            Utils.explode(this.level, entityHitResult.getEntity().blockPosition(), 2f);
+        if (!this.level().isClientSide) {
+            Utils.explode(this.level(), entityHitResult.getEntity().blockPosition(), 2f);
             discard();
         }
     }
@@ -40,8 +40,8 @@ public class TNTArrow extends AbstractArrow {
     @Override
     protected void onHitBlock(BlockHitResult blockHitResult) {
         super.onHitBlock(blockHitResult);
-        if (!this.level.isClientSide) {
-            Utils.explode(this.level, blockHitResult.getBlockPos(), 2f);
+        if (!this.level().isClientSide) {
+            Utils.explode(this.level(), blockHitResult.getBlockPos(), 2f);
             discard();
         }
     }
