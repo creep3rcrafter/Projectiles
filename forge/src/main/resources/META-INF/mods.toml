@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[43,)"
+loaderVersion = "[${forgeMajorVersion},)"
 issueTrackerURL = "https://github.com/creep3rcrafter//issues"
 license = "All Rights Reserved"
 
@@ -15,20 +15,20 @@ logoFile = "logo.png"
 [[dependencies.projectiles]]
 modId = "forge"
 mandatory = true
-versionRange = "[43,)"
+versionRange = "[${forgeMajorVersion},)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.projectiles]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.19.2,)"
+versionRange = "[${minecraftVersion},)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.projectiles]]
 modId = "architectury"
 mandatory = true
-versionRange = "[6.2.43,)"
+versionRange = "[${architecturyVersion},)"
 ordering = "AFTER"
 side = "BOTH"
