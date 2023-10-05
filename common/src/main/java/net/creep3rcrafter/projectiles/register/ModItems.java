@@ -28,8 +28,8 @@ public class ModItems {
     //slingshot > shoots seeds and buttons
     //slime not compatible with punch bows - fixed
     //lead arrow
-    // ender arrow text, chorus text, cobweb text, copper text
-    // diamond arrow and gold arrow do same damage
+    //ender arrow text, chorus text, cobweb text, copper text
+    //diamond arrow and gold arrow do same damage
 
     public static final RegistrySupplier<ArrowItem> WOOD_ARROW = ITEMS.register("wood_arrow", () ->
             new WoodArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
