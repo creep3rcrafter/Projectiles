@@ -5,7 +5,9 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import net.creep3rcrafter.projectiles.Projectiles;
 import net.creep3rcrafter.projectiles.item.*;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ArrowItem;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Projectiles.MOD_ID, Registries.ITEM);

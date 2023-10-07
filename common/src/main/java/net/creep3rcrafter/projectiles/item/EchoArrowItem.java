@@ -33,7 +33,7 @@ public class EchoArrowItem extends CustomArrowItem {
 
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, @NotNull List<Component> list, @NotNull TooltipFlag tooltipFlag) {
-        list.add(Component.translatable("Sonic Damage: 5").withStyle(ChatFormatting.AQUA));
+        list.add(Component.translatable(EchoArrow.SONIC_DAMAGE + " Sonic Damage").withStyle(ChatFormatting.AQUA));
         super.appendHoverText(itemStack, level, list, tooltipFlag);
     }
 
