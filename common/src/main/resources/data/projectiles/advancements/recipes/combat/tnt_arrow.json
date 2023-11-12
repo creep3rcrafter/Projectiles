@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:tnt"
+              "projectiles:dynamite"
             ]
           }
         ]
@@ -41,7 +41,7 @@
   ],
   "rewards": {
     "recipes": [
-      "projectiles:tnt_arrow"
+      "projectiles:tnt_arrow_dynamite"
     ]
   }
 }
