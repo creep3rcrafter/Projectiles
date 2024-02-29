@@ -18,5 +18,3 @@ classes/
 .settings
 *.launch
 *.log
-.architectury-transformer/debug.log
-*.log

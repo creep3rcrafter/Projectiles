@@ -20,7 +20,7 @@ public class NetheriteArrowItem extends CustomArrowItem {
 
     @Override
     public double getBaseDamage() {
-        return 8D;
+        return 7D;
     }
 
 }
