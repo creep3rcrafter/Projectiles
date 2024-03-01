@@ -8,14 +8,10 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.behavior.warden.SonicBoom;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
-import net.minecraft.world.entity.monster.warden.Warden;
-import net.minecraft.world.entity.monster.warden.WardenAi;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -25,6 +21,7 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 public class EchoArrow extends AbstractArrow {
+    public static final float SONIC_DAMAGE = 4;
     private int tick;
 
     public EchoArrow(EntityType<? extends EchoArrow> entityType, Level level) {
@@ -65,7 +62,7 @@ public class EchoArrow extends AbstractArrow {
                     }
 
                     this.playSound(SoundEvents.WARDEN_SONIC_BOOM, 3.0F, 1.0F);
-                    livingEntity.hurt(serverLevel.damageSources().sonicBoom(this.getOwner()), 5.0F);
+                    livingEntity.hurt(livingEntity.damageSources().sonicBoom(this.getOwner()), SONIC_DAMAGE);
                     double d = 0.5 * (1.0 - livingEntity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
                     double e = 2.5 * (1.0 - livingEntity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
                     livingEntity.push(vec33.x() * e, vec33.y() * d, vec33.z() * e);
@@ -104,7 +101,7 @@ public class EchoArrow extends AbstractArrow {
                         }
 
                         this.playSound(SoundEvents.WARDEN_SONIC_BOOM, 3.0F, 1.0F);
-                        livingEntity.hurt(serverLevel.damageSources().sonicBoom(this.getOwner()), 5.0F);
+                        livingEntity.hurt(livingEntity.damageSources().sonicBoom(this.getOwner()), SONIC_DAMAGE);
                         double d = 0.5 * (1.0 - livingEntity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
                         double e = 2.5 * (1.0 - livingEntity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
                         livingEntity.push(vec33.x() * e, vec33.y() * d, vec33.z() * e);

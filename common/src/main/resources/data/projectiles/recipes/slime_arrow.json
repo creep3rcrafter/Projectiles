@@ -5,7 +5,7 @@
       "item": "minecraft:slime_ball"
     },
     "#": {
-      "tag": "forge:rods/wooden"
+      "item": "minecraft:stick"
     },
     "Y": {
       "item": "minecraft:feather"
