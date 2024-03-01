@@ -20,7 +20,7 @@ public class DiamondArrowItem extends CustomArrowItem {
 
     @Override
     public double getBaseDamage() {
-        return 5D;
+        return 6D;
     }
 
 }
