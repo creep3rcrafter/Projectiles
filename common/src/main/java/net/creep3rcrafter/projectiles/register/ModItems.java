@@ -30,6 +30,7 @@ public class ModItems {
     //lead arrow
     //ender arrow text, chorus text, cobweb text, copper text
     //diamond arrow and gold arrow do same damage
+    //full netherite arrows
 
     public static final RegistrySupplier<ArrowItem> WOOD_ARROW = ITEMS.register("wood_arrow", () ->
             new WoodArrowItem(new Item.Properties().stacksTo(64).arch$tab(CreativeModeTabs.COMBAT)));

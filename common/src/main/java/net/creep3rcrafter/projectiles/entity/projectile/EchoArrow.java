@@ -61,7 +61,7 @@ public class EchoArrow extends AbstractArrow {
                     }
 
                     this.playSound(SoundEvents.WARDEN_SONIC_BOOM, 3.0F, 1.0F);
-                    livingEntity.hurt(serverLevel.damageSources().sonicBoom(this.getOwner()), 5.0F);
+                    livingEntity.hurt(livingEntity.damageSources().sonicBoom(this.getOwner()), SONIC_DAMAGE);
                     double d = 0.5 * (1.0 - livingEntity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
                     double e = 2.5 * (1.0 - livingEntity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
                     livingEntity.push(vec33.x() * e, vec33.y() * d, vec33.z() * e);
@@ -100,7 +100,7 @@ public class EchoArrow extends AbstractArrow {
                         }
 
                         this.playSound(SoundEvents.WARDEN_SONIC_BOOM, 3.0F, 1.0F);
-                        livingEntity.hurt(serverLevel.damageSources().sonicBoom(this.getOwner()), SONIC_DAMAGE);
+                        livingEntity.hurt(livingEntity.damageSources().sonicBoom(this.getOwner()), SONIC_DAMAGE);
                         double d = 0.5 * (1.0 - livingEntity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
                         double e = 2.5 * (1.0 - livingEntity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
                         livingEntity.push(vec33.x() * e, vec33.y() * d, vec33.z() * e);
