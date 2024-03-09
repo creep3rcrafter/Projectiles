@@ -12,16 +12,17 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class IronArrow extends AbstractArrow {
+    public static final ItemStack ARROW_ITEMSTACK = new ItemStack(ModItems.IRON_ARROW.get());
     public IronArrow(EntityType<? extends IronArrow> entityType, Level level) {
-        super(entityType, level);
+        super(entityType, level, ARROW_ITEMSTACK);
     }
 
-    public IronArrow(Level level, double x, double y, double z) {
-        super(ModEntityTypes.IRON_ARROW.get(), x, y, z, level);
+    public IronArrow(Level level, double x, double y, double z, ItemStack itemStack) {
+        super(ModEntityTypes.IRON_ARROW.get(), x, y, z, level, itemStack);
     }
 
-    public IronArrow(Level level, LivingEntity livingEntity) {
-        super(ModEntityTypes.IRON_ARROW.get(), livingEntity, level);
+    public IronArrow(Level level, LivingEntity livingEntity, ItemStack itemStack) {
+        super(ModEntityTypes.IRON_ARROW.get(), livingEntity, level, itemStack);
     }
 
     @Override
@@ -31,6 +32,6 @@ public class IronArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.IRON_ARROW.get());
+        return ARROW_ITEMSTACK;
     }
 }

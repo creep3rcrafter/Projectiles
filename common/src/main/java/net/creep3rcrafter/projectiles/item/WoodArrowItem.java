@@ -13,7 +13,7 @@ public class WoodArrowItem extends CustomArrowItem {
 
     @Override
     public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity livingEntity) {
-        WoodArrow arrow = new WoodArrow(level, livingEntity);
+        WoodArrow arrow = new WoodArrow(level, livingEntity, itemStack.copyWithCount(1));
         arrow.pickup = AbstractArrow.Pickup.ALLOWED;
         arrow.setBaseDamage(getBaseDamage());
         return arrow;

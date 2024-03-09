@@ -14,18 +14,19 @@ import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.NotNull;
 
 public class SlimeArrow extends AbstractArrow {
+    public static final ItemStack ARROW_ITEMSTACK = new ItemStack(ModItems.SLIME_ARROW.get());
     public static final int BASE_KNOCKBACK = 4;
 
     public SlimeArrow(EntityType<? extends SlimeArrow> entityType, Level level) {
-        super(entityType, level);
+        super(entityType, level, ARROW_ITEMSTACK);
     }
 
-    public SlimeArrow(Level level, double x, double y, double z) {
-        super(ModEntityTypes.SLIME_ARROW.get(), x, y, z, level);
+    public SlimeArrow(Level level, double x, double y, double z, ItemStack itemStack) {
+        super(ModEntityTypes.SLIME_ARROW.get(), x, y, z, level, itemStack);
     }
 
-    public SlimeArrow(Level level, LivingEntity livingEntity) {
-        super(ModEntityTypes.SLIME_ARROW.get(), livingEntity, level);
+    public SlimeArrow(Level level, LivingEntity livingEntity, ItemStack itemStack) {
+        super(ModEntityTypes.SLIME_ARROW.get(), livingEntity, level, itemStack);
     }
 
     @Override
@@ -56,6 +57,6 @@ public class SlimeArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.SLIME_ARROW.get());
+        return ARROW_ITEMSTACK;
     }
 }

@@ -20,7 +20,7 @@ public class SoulArrowItem extends CustomArrowItem {
 
     @Override
     public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity livingEntity) {
-        SoulArrow arrow = new SoulArrow(level, livingEntity);
+        SoulArrow arrow = new SoulArrow(level, livingEntity, itemStack.copyWithCount(1));
         arrow.pickup = AbstractArrow.Pickup.DISALLOWED;
         arrow.setNoGravity(true);
         arrow.setBaseDamage(getBaseDamage());

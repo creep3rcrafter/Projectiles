@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
     id "com.modrinth.minotaur" version "2.+"
 }
 
@@ -7,19 +7,18 @@ architectury {
     platformSetupLoomIde()
     forge()
 }
-
 loom {
     accessWidenerPath = project(":common").loom.accessWidenerPath
 
     forge {
         convertAccessWideners = true
         extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
+        mixinConfig("projectiles-common.mixins.json", "projectiles.mixins.json")
 
-        mixinConfig "projectiles-common.mixins.json"
-        mixinConfig "projectiles.mixins.json"
+        //mixinConfig "mysticpotions-common.mixins.json"
+        //mixinConfig "mysticpotions.mixins.json"
     }
 }
-
 configurations {
     common
     shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
@@ -46,16 +45,11 @@ dependencies {
         }
     }
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
-    // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
-    //modApi "maven.modrinth:jei:11.6.0.1018"
-    //modApi "curse.maven:mod-name-tooltip-238747:3898427"
-    //modApi "curse.maven:itemzoom-261725:3903160"
-    //modApi "maven.modrinth:rubidium:0.6.2b"
+    //modApi "maven.modrinth:jei:${rootProject.jei_version}"
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 }
-
 processResources {
     inputs.property "group", maven_group
     inputs.property "version", project.version
@@ -77,19 +71,18 @@ shadowJar {
     exclude "architectury.common.json"
 
     configurations = [project.configurations.shadowCommon]
-    classifier "dev-shadow"
+    archiveClassifier.set("dev-shadow")
 }
 
 remapJar {
     input.set shadowJar.archiveFile
     dependsOn shadowJar
-    classifier "${minecraft_version}-${forge_suffix}"
+    archiveClassifier.set("${minecraft_version}-${forge_suffix}")
 }
 
 jar {
-    classifier "dev"
+    archiveClassifier.set("dev")
 }
-
 sourcesJar {
     def commonSources = project(":common").sourcesJar
     dependsOn commonSources

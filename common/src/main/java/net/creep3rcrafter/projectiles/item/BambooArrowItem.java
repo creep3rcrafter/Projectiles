@@ -14,7 +14,7 @@ public class BambooArrowItem extends CustomArrowItem {
 
     @Override
     public @NotNull AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity livingEntity) {
-        BambooArrow arrow = new BambooArrow(level, livingEntity);
+        BambooArrow arrow = new BambooArrow(level, livingEntity, itemStack.copyWithCount(1));
         arrow.pickup = AbstractArrow.Pickup.ALLOWED;
         arrow.setBaseDamage(getBaseDamage());
         return arrow;

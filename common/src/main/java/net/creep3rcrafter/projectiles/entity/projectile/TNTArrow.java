@@ -15,17 +15,18 @@ import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.NotNull;
 
 public class TNTArrow extends AbstractArrow {
+    public static final ItemStack ARROW_ITEMSTACK = new ItemStack(ModItems.TNT_ARROW.get());
 
     public TNTArrow(EntityType<? extends TNTArrow> entityType, Level level) {
-        super(entityType, level);
+        super(entityType, level, ARROW_ITEMSTACK);
     }
 
-    public TNTArrow(Level level, double x, double y, double z) {
-        super(ModEntityTypes.TNT_ARROW.get(), x, y, z, level);
+    public TNTArrow(Level level, double x, double y, double z, ItemStack itemStack) {
+        super(ModEntityTypes.TNT_ARROW.get(), x, y, z, level, itemStack);
     }
 
-    public TNTArrow(Level level, LivingEntity livingEntity) {
-        super(ModEntityTypes.TNT_ARROW.get(), livingEntity, level);
+    public TNTArrow(Level level, LivingEntity livingEntity, ItemStack itemStack) {
+        super(ModEntityTypes.TNT_ARROW.get(), livingEntity, level, itemStack);
     }
 
     @Override
@@ -53,6 +54,6 @@ public class TNTArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.TNT_ARROW.get());
+        return ARROW_ITEMSTACK;
     }
 }

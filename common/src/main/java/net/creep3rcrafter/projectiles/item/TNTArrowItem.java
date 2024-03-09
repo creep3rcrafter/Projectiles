@@ -20,7 +20,7 @@ public class TNTArrowItem extends CustomArrowItem {
 
     @Override
     public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity livingEntity) {
-        TNTArrow arrow = new TNTArrow(level, livingEntity);
+        TNTArrow arrow = new TNTArrow(level, livingEntity, itemStack.copyWithCount(1));
         arrow.pickup = AbstractArrow.Pickup.DISALLOWED;
         arrow.setBaseDamage(getBaseDamage());
         return arrow;

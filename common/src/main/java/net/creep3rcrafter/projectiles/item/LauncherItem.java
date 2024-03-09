@@ -1,14 +1,16 @@
 package net.creep3rcrafter.projectiles.item;
+
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.monster.CrossbowAttackMob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.*;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.CrossbowItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
@@ -86,10 +88,19 @@ public class LauncherItem extends CrossbowItem {
                     ((AbstractArrow) projectile).pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
                 }
             }
-
+            /*
             if (livingEntity instanceof CrossbowAttackMob crossbowAttackMob) {
                 crossbowAttackMob.shootCrossbowProjectile(crossbowAttackMob.getTarget(), itemStack, (Projectile) projectile, i);
+            } else {
+                Vec3 vec3 = livingEntity.getUpVector(1.0F);
+                Quaternionf quaternion = new Quaternionf(new Vec3(vec3.toVector3f()), i, true);
+                Vec3 vec32 = livingEntity.getViewVector(1.0F);
+                Vec3 vector3f = new Vec3(vec32);
+                vector3f.transform(quaternion);
+                ((Projectile) projectile).shoot(vector3f.x(), vector3f.y(), vector3f.z(), g, h);
             }
+
+             */
 
             itemStack.hurtAndBreak(firework ? 3 : 1, livingEntity, (livingEntityx) -> {
                 livingEntityx.broadcastBreakEvent(interactionHand);

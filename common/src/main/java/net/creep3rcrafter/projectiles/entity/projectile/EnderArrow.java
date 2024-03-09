@@ -13,16 +13,17 @@ import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.NotNull;
 
 public class EnderArrow extends AbstractArrow {
+    public static final ItemStack ARROW_ITEMSTACK = new ItemStack(ModItems.ENDER_ARROW.get());
     public EnderArrow(EntityType<? extends EnderArrow> entityType, Level level) {
-        super(entityType, level);
+        super(entityType, level, ARROW_ITEMSTACK);
     }
 
-    public EnderArrow(Level level, double x, double y, double z) {
-        super(ModEntityTypes.ENDER_ARROW.get(), x, y, z, level);
+    public EnderArrow(Level level, double x, double y, double z, ItemStack itemStack) {
+        super(ModEntityTypes.ENDER_ARROW.get(), x, y, z, level, itemStack);
     }
 
-    public EnderArrow(Level level, LivingEntity livingEntity) {
-        super(ModEntityTypes.ENDER_ARROW.get(), livingEntity, level);
+    public EnderArrow(Level level, LivingEntity livingEntity, ItemStack itemStack) {
+        super(ModEntityTypes.ENDER_ARROW.get(), livingEntity, level, itemStack);
     }
 
     @Override
@@ -51,6 +52,6 @@ public class EnderArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.ENDER_ARROW.get());
+        return ARROW_ITEMSTACK;
     }
 }

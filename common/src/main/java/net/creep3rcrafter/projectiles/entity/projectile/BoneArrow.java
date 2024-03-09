@@ -12,16 +12,17 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class BoneArrow extends AbstractArrow {
+    public static final ItemStack ARROW_ITEMSTACK = new ItemStack(ModItems.BONE_ARROW.get());
     public BoneArrow(EntityType<? extends BoneArrow> entityType, Level level) {
-        super(entityType, level);
+        super(entityType, level, ARROW_ITEMSTACK);
     }
 
-    public BoneArrow(Level level, double x, double y, double z) {
-        super(ModEntityTypes.BONE_ARROW.get(), x, y, z, level);
+    public BoneArrow(Level level, double x, double y, double z, ItemStack itemStack) {
+        super(ModEntityTypes.BONE_ARROW.get(), x, y, z, level, itemStack);
     }
 
-    public BoneArrow(Level level, LivingEntity livingEntity) {
-        super(ModEntityTypes.BONE_ARROW.get(), livingEntity, level);
+    public BoneArrow(Level level, LivingEntity livingEntity, ItemStack itemStack) {
+        super(ModEntityTypes.BONE_ARROW.get(), livingEntity, level, itemStack);
     }
 
 
@@ -32,6 +33,6 @@ public class BoneArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.BONE_ARROW.get());
+        return ARROW_ITEMSTACK;
     }
 }

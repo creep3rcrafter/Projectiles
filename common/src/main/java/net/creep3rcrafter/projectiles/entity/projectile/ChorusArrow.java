@@ -20,17 +20,18 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 public class ChorusArrow extends AbstractArrow {
+    public static final ItemStack ARROW_ITEMSTACK = new ItemStack(ModItems.CHORUS_ARROW.get());
 
     public ChorusArrow(EntityType<? extends ChorusArrow> entityType, Level level) {
-        super(entityType, level);
+        super(entityType, level, ARROW_ITEMSTACK);
     }
 
-    public ChorusArrow(Level level, double x, double y, double z) {
-        super(ModEntityTypes.CHORUS_ARROW.get(), x, y, z, level);
+    public ChorusArrow(Level level, double x, double y, double z, ItemStack itemStack) {
+        super(ModEntityTypes.CHORUS_ARROW.get(), x, y, z, level, itemStack);
     }
 
-    public ChorusArrow(Level level, LivingEntity livingEntity) {
-        super(ModEntityTypes.CHORUS_ARROW.get(), livingEntity, level);
+    public ChorusArrow(Level level, LivingEntity livingEntity, ItemStack itemStack) {
+        super(ModEntityTypes.CHORUS_ARROW.get(), livingEntity, level, itemStack);
     }
 
     @Override
@@ -79,6 +80,6 @@ public class ChorusArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.CHORUS_ARROW.get());
+        return ARROW_ITEMSTACK;
     }
 }

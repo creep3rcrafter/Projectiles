@@ -12,16 +12,17 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class BambooArrow extends AbstractArrow {
+    public static final ItemStack ARROW_ITEMSTACK = new ItemStack(ModItems.BAMBOO_ARROW.get());
     public BambooArrow(EntityType<? extends BambooArrow> entityType, Level level) {
-        super(entityType, level);
+        super(entityType, level, ARROW_ITEMSTACK);
     }
 
-    public BambooArrow(Level level, double x, double y, double z) {
-        super(ModEntityTypes.BAMBOO_ARROW.get(), x, y, z, level);
+    public BambooArrow(Level level, double x, double y, double z, ItemStack itemStack) {
+        super(ModEntityTypes.BAMBOO_ARROW.get(), x, y, z, level, itemStack);
     }
 
-    public BambooArrow(Level level, LivingEntity livingEntity) {
-        super(ModEntityTypes.BAMBOO_ARROW.get(), livingEntity, level);
+    public BambooArrow(Level level, LivingEntity livingEntity, ItemStack itemStack) {
+        super(ModEntityTypes.BAMBOO_ARROW.get(), livingEntity, level, itemStack);
     }
 
     @Override
@@ -31,6 +32,6 @@ public class BambooArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.BAMBOO_ARROW.get());
+        return ARROW_ITEMSTACK;
     }
 }

@@ -12,16 +12,17 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class GoldArrow extends AbstractArrow {
+    public static final ItemStack ARROW_ITEMSTACK = new ItemStack(ModItems.GOLD_ARROW.get());
     public GoldArrow(EntityType<? extends GoldArrow> entityType, Level level) {
-        super(entityType, level);
+        super(entityType, level, ARROW_ITEMSTACK);
     }
 
-    public GoldArrow(Level level, double x, double y, double z) {
-        super(ModEntityTypes.GOLD_ARROW.get(), x, y, z, level);
+    public GoldArrow(Level level, double x, double y, double z, ItemStack itemStack) {
+        super(ModEntityTypes.GOLD_ARROW.get(), x, y, z, level, itemStack);
     }
 
-    public GoldArrow(Level level, LivingEntity livingEntity) {
-        super(ModEntityTypes.GOLD_ARROW.get(), livingEntity, level);
+    public GoldArrow(Level level, LivingEntity livingEntity, ItemStack itemStack) {
+        super(ModEntityTypes.GOLD_ARROW.get(), livingEntity, level, itemStack);
     }
 
     @Override
@@ -31,6 +32,6 @@ public class GoldArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.GOLD_ARROW.get());
+        return ARROW_ITEMSTACK;
     }
 }

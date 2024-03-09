@@ -1,13 +1,13 @@
 plugins {
     id "architectury-plugin" version "3.4-SNAPSHOT"
-    id "dev.architectury.loom" version "1.0.+" apply false
+    id "dev.architectury.loom" version "1.5-SNAPSHOT" apply false
     id "io.github.pacifistmc.forgix" version "1.2.+"
     id "com.modrinth.minotaur" version "2.+"
     id("com.matthewprenger.cursegradle") version "1.4.+"
 }
 
 tasks.register('runAllClients') {
-    dependsOn(':forge:runClient', ':fabric:runClient', ':quilt:runClient')
+    dependsOn(':forge:runClient', ':fabric:runClient', ':neoforge:runClient')
 }
 tasks.register('runForgeClient') {
     dependsOn(':forge:runClient')
@@ -17,8 +17,8 @@ tasks.register('runFabricClient') {
     dependsOn(':fabric:runClient')
 
 }
-tasks.register('runQuiltClient') {
-    dependsOn(':quilt:runClient')
+tasks.register('runNeoClient') {
+    dependsOn(':neoforge:runClient')
 
 }
 
@@ -38,9 +38,9 @@ forgix {
         projectName = "fabric"
         jarLocation = "build/libs/${project.archives_base_name}-${project.mod_version}-${project.minecraft_version}-${project.fabric_suffix}.jar"
     }
-    quilt {
-        projectName = 'quilt'
-        jarLocation = "build/libs/${project.archives_base_name}-${project.mod_version}-${project.minecraft_version}-${project.quilt_suffix}.jar"
+    custom {
+        projectName = 'neoforge'
+        jarLocation = "build/libs/${project.archives_base_name}-${project.mod_version}-${project.minecraft_version}-${project.neoforge_suffix}.jar"
     }
 }
 
@@ -82,7 +82,7 @@ allprojects {
         withSourcesJar()
     }
 }
-tasks.getByName('modrinth').dependsOn(':clean', ':build', ':mergeJars', ':quilt:modrinth', ':fabric:modrinth', ':forge:modrinth')
+tasks.getByName('modrinth').dependsOn(':clean', ':build', ':mergeJars', ':neoforge:modrinth', ':fabric:modrinth', ':forge:modrinth')
 modrinth {
     token = System.getenv("MODRINTH_TOKEN")
     versionName = "${project.archives_base_name}-${project.mod_version}-${project.minecraft_version}-${project.multi_suffix}"
@@ -107,7 +107,6 @@ curseforge {
         releaseType = project.multi_release_type
         addGameVersion 'Forge'
         addGameVersion 'Fabric'
-        addGameVersion 'Quilt'
         addGameVersion project.minecraft_version
         relations {
             requiredDependency project.curseforge_dependency

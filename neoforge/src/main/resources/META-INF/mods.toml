@@ -1,0 +1,19 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+issueTrackerURL = "https://github.com/creep3rcrafter/Projectiles/issues"
+license = "LGPL-3"
+
+[[mods]]
+modId = "projectiles"
+version = "${version}"
+displayName = "Projectiles NeoForge"
+authors = "Creep3rCrafter"
+description = '''Adds New Arrows To Minecraft!'''
+license = "LGPL-3"
+
+[[accessTransformers]]
+file="META-INF/accesstransformer.cfg"
+[[mixins]]
+config = "projectiles-common.mixins.json"
+[[mixins]]
+config = "projectiles.mixins.json"

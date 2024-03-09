@@ -20,7 +20,7 @@ public class SlimeArrowItem extends CustomArrowItem {
 
     @Override
     public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity livingEntity) {
-        SlimeArrow arrow = new SlimeArrow(level, livingEntity);
+        SlimeArrow arrow = new SlimeArrow(level, livingEntity, itemStack.copyWithCount(1));
         arrow.setBaseDamage(getBaseDamage());
         arrow.setKnockback(0);
         return arrow;
@@ -33,7 +33,7 @@ public class SlimeArrowItem extends CustomArrowItem {
 
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, @NotNull List<Component> list, @NotNull TooltipFlag tooltipFlag) {
-        list.add(Component.translatable("Base Knockback: " + SlimeArrow.BASE_KNOCKBACK).withStyle(ChatFormatting.GREEN));
+        list.add(Component.translatable(SlimeArrow.BASE_KNOCKBACK + " Base Knockback").withStyle(ChatFormatting.GREEN));
         super.appendHoverText(itemStack, level, list, tooltipFlag);
     }
 

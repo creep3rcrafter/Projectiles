@@ -20,7 +20,7 @@ public class PrismarineArrowItem extends CustomArrowItem {
 
     @Override
     public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity livingEntity) {
-        PrismarineArrow arrow = new PrismarineArrow(level, livingEntity);
+        PrismarineArrow arrow = new PrismarineArrow(level, livingEntity, itemStack.copyWithCount(1));
         arrow.setBaseDamage(getBaseDamage());
         return arrow;
     }

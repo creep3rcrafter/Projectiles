@@ -16,17 +16,18 @@ import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.NotNull;
 
 public class CobwebArrow extends AbstractArrow {
+    public static final ItemStack ARROW_ITEMSTACK = new ItemStack(ModItems.COBWEB_ARROW.get());
 
     public CobwebArrow(EntityType<? extends CobwebArrow> entityType, Level level) {
-        super(entityType, level);
+        super(entityType, level, ARROW_ITEMSTACK);
     }
 
-    public CobwebArrow(Level level, double x, double y, double z) {
-        super(ModEntityTypes.COBWEB_ARROW.get(), x, y, z, level);
+    public CobwebArrow(Level level, double x, double y, double z, ItemStack itemStack) {
+        super(ModEntityTypes.COBWEB_ARROW.get(), x, y, z, level, itemStack);
     }
 
-    public CobwebArrow(Level level, LivingEntity livingEntity) {
-        super(ModEntityTypes.COBWEB_ARROW.get(), livingEntity, level);
+    public CobwebArrow(Level level, LivingEntity livingEntity, ItemStack itemStack) {
+        super(ModEntityTypes.COBWEB_ARROW.get(), livingEntity, level, itemStack);
     }
 
     @Override
@@ -62,6 +63,6 @@ public class CobwebArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.COBWEB_ARROW.get());
+        return ARROW_ITEMSTACK;
     }
 }

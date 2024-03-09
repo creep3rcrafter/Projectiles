@@ -13,7 +13,7 @@ public class ObsidianArrowItem extends CustomArrowItem {
 
     @Override
     public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity livingEntity) {
-        ObsidianArrow arrow = new ObsidianArrow(level, livingEntity);
+        ObsidianArrow arrow = new ObsidianArrow(level, livingEntity, itemStack.copyWithCount(1));
         arrow.setBaseDamage(getBaseDamage());
         return arrow;
     }

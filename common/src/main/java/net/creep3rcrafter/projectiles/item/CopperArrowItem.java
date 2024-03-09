@@ -13,7 +13,7 @@ public class CopperArrowItem extends CustomArrowItem {
 
     @Override
     public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity livingEntity) {
-        CopperArrow arrow = new CopperArrow(level, livingEntity);
+        CopperArrow arrow = new CopperArrow(level, livingEntity, itemStack.copyWithCount(1));
         arrow.pickup = AbstractArrow.Pickup.ALLOWED;
         arrow.setBaseDamage(getBaseDamage());
         return arrow;

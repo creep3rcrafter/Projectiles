@@ -12,16 +12,17 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class ObsidianArrow extends AbstractArrow {
+    public static final ItemStack ARROW_ITEMSTACK = new ItemStack(ModItems.OBSIDIAN_ARROW.get());
     public ObsidianArrow(EntityType<? extends ObsidianArrow> entityType, Level level) {
-        super(entityType, level);
+        super(entityType, level, ARROW_ITEMSTACK);
     }
 
-    public ObsidianArrow(Level level, double x, double y, double z) {
-        super(ModEntityTypes.OBSIDIAN_ARROW.get(), x, y, z, level);
+    public ObsidianArrow(Level level, double x, double y, double z, ItemStack itemStack) {
+        super(ModEntityTypes.OBSIDIAN_ARROW.get(), x, y, z, level, itemStack);
     }
 
-    public ObsidianArrow(Level level, LivingEntity livingEntity) {
-        super(ModEntityTypes.OBSIDIAN_ARROW.get(), livingEntity, level);
+    public ObsidianArrow(Level level, LivingEntity livingEntity, ItemStack itemStack) {
+        super(ModEntityTypes.OBSIDIAN_ARROW.get(), livingEntity, level, itemStack);
     }
 
     @Override
@@ -31,6 +32,6 @@ public class ObsidianArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.OBSIDIAN_ARROW.get());
+        return ARROW_ITEMSTACK;
     }
 }

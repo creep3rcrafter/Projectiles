@@ -12,16 +12,17 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class DiamondArrow extends AbstractArrow {
-    public DiamondArrow(EntityType<? extends DiamondArrow> entityType, Level level) {
-        super(entityType, level);
+    public static final ItemStack ARROW_ITEMSTACK = new ItemStack(ModItems.DIAMOND_ARROW.get());
+    public DiamondArrow(EntityType<? extends DiamondArrow> entityType, Level level, ItemStack itemStack) {
+        super(entityType, level, ARROW_ITEMSTACK);
     }
 
-    public DiamondArrow(Level level, double x, double y, double z) {
-        super(ModEntityTypes.DIAMOND_ARROW.get(), x, y, z, level);
+    public DiamondArrow(Level level, double x, double y, double z, ItemStack itemStack) {
+        super(ModEntityTypes.DIAMOND_ARROW.get(), x, y, z, level, itemStack);
     }
 
-    public DiamondArrow(Level level, LivingEntity livingEntity) {
-        super(ModEntityTypes.DIAMOND_ARROW.get(), livingEntity, level);
+    public DiamondArrow(Level level, LivingEntity livingEntity, ItemStack itemStack) {
+        super(ModEntityTypes.DIAMOND_ARROW.get(), livingEntity, level, itemStack);
     }
 
 
@@ -32,6 +33,6 @@ public class DiamondArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.DIAMOND_ARROW.get());
+        return ARROW_ITEMSTACK;
     }
 }

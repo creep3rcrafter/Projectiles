@@ -13,14 +13,14 @@ public class NetheriteArrowItem extends CustomArrowItem {
 
     @Override
     public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity livingEntity) {
-        NetheriteArrow arrow = new NetheriteArrow(level, livingEntity);
+        NetheriteArrow arrow = new NetheriteArrow(level, livingEntity, itemStack.copyWithCount(1));
         arrow.setBaseDamage(getBaseDamage());
         return arrow;
     }
 
     @Override
     public double getBaseDamage() {
-        return 8D;
+        return 7D;
     }
 
 }

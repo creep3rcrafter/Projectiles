@@ -13,7 +13,7 @@ public class NetherQuartzArrowItem extends CustomArrowItem {
 
     @Override
     public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity livingEntity) {
-        NetherQuartzArrow arrow = new NetherQuartzArrow(level, livingEntity);
+        NetherQuartzArrow arrow = new NetherQuartzArrow(level, livingEntity, itemStack.copyWithCount(1));
         arrow.setBaseDamage(getBaseDamage());
         return arrow;
     }

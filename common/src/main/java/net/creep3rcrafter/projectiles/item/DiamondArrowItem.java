@@ -13,14 +13,14 @@ public class DiamondArrowItem extends CustomArrowItem {
 
     @Override
     public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity livingEntity) {
-        DiamondArrow arrow = new DiamondArrow(level, livingEntity);
+        DiamondArrow arrow = new DiamondArrow(level, livingEntity, itemStack.copyWithCount(1));
         arrow.setBaseDamage(getBaseDamage());
         return arrow;
     }
 
     @Override
     public double getBaseDamage() {
-        return 5D;
+        return 6D;
     }
 
 }

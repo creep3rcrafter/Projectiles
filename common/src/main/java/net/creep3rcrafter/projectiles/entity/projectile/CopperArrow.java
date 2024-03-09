@@ -19,16 +19,17 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 public class CopperArrow extends AbstractArrow {
+    public static final ItemStack ARROW_ITEMSTACK = new ItemStack(ModItems.COPPER_ARROW.get());
     public CopperArrow(EntityType<? extends CopperArrow> entityType, Level level) {
-        super(entityType, level);
+        super(entityType, level, ARROW_ITEMSTACK);
     }
 
-    public CopperArrow(Level level, double x, double y, double z) {
-        super(ModEntityTypes.COPPER_ARROW.get(), x, y, z, level);
+    public CopperArrow(Level level, double x, double y, double z, ItemStack itemStack) {
+        super(ModEntityTypes.COPPER_ARROW.get(), x, y, z, level, itemStack);
     }
 
-    public CopperArrow(Level level, LivingEntity livingEntity) {
-        super(ModEntityTypes.COPPER_ARROW.get(), livingEntity, level);
+    public CopperArrow(Level level, LivingEntity livingEntity, ItemStack itemStack) {
+        super(ModEntityTypes.COPPER_ARROW.get(), livingEntity, level, itemStack);
     }
 
     @Override
@@ -75,6 +76,6 @@ public class CopperArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.COPPER_ARROW.get());
+        return ARROW_ITEMSTACK;
     }
 }

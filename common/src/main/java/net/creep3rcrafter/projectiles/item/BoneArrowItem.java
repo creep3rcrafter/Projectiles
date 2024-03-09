@@ -14,7 +14,7 @@ public class BoneArrowItem extends CustomArrowItem {
 
     @Override
     public @NotNull AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity livingEntity) {
-        BoneArrow arrow = new BoneArrow(level, livingEntity);
+        BoneArrow arrow = new BoneArrow(level, livingEntity, itemStack.copyWithCount(1));
         arrow.pickup = AbstractArrow.Pickup.ALLOWED;
         arrow.setBaseDamage(getBaseDamage());
         return arrow;

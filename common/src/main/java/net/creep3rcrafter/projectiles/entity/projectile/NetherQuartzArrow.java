@@ -12,16 +12,17 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class NetherQuartzArrow extends AbstractArrow {
+    public static final ItemStack ARROW_ITEMSTACK = new ItemStack(ModItems.NETHER_QUARTZ_ARROW.get());
     public NetherQuartzArrow(EntityType<? extends NetherQuartzArrow> entityType, Level level) {
-        super(entityType, level);
+        super(entityType, level, ARROW_ITEMSTACK);
     }
 
-    public NetherQuartzArrow(Level level, double x, double y, double z) {
-        super(ModEntityTypes.NETHER_QUARTZ_ARROW.get(), x, y, z, level);
+    public NetherQuartzArrow(Level level, double x, double y, double z, ItemStack itemStack) {
+        super(ModEntityTypes.NETHER_QUARTZ_ARROW.get(), x, y, z, level, itemStack);
     }
 
-    public NetherQuartzArrow(Level level, LivingEntity livingEntity) {
-        super(ModEntityTypes.NETHER_QUARTZ_ARROW.get(), livingEntity, level);
+    public NetherQuartzArrow(Level level, LivingEntity livingEntity, ItemStack itemStack) {
+        super(ModEntityTypes.NETHER_QUARTZ_ARROW.get(), livingEntity, level, itemStack);
     }
 
     @Override
@@ -31,6 +32,6 @@ public class NetherQuartzArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.NETHER_QUARTZ_ARROW.get());
+        return ARROW_ITEMSTACK;
     }
 }
