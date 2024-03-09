@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class DiamondArrow extends AbstractArrow {
     public static final ItemStack ARROW_ITEMSTACK = new ItemStack(ModItems.DIAMOND_ARROW.get());
-    public DiamondArrow(EntityType<? extends DiamondArrow> entityType, Level level, ItemStack itemStack) {
+    public DiamondArrow(EntityType<? extends DiamondArrow> entityType, Level level) {
         super(entityType, level, ARROW_ITEMSTACK);
     }
 
