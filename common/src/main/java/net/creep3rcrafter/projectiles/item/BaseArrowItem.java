@@ -1,10 +1,10 @@
 package net.creep3rcrafter.projectiles.item;
 
-import net.creep3rcrafter.projectiles.entity.projectile.TNTArrow;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.item.ArrowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -13,27 +13,23 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class TNTArrowItem extends BaseArrowItem {
-    public TNTArrowItem(Properties properties) {
+public abstract class BaseArrowItem extends ArrowItem {
+    public BaseArrowItem(Properties properties) {
         super(properties);
     }
 
-    @Override
-    public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity livingEntity) {
-        TNTArrow arrow = new TNTArrow(level, livingEntity);
-        arrow.pickup = AbstractArrow.Pickup.DISALLOWED;
-        arrow.setBaseDamage(getBaseDamage());
-        return arrow;
+    public double getBaseDamage() {
+        return 0;
     }
 
     @Override
-    public double getBaseDamage() {
-        return 1.5D;
+    public AbstractArrow createArrow(@NotNull Level level, @NotNull ItemStack itemStack, @NotNull LivingEntity livingEntity) {
+        return super.createArrow(level, itemStack, livingEntity);
     }
 
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, @NotNull List<Component> list, @NotNull TooltipFlag tooltipFlag) {
-        list.add(Component.translatable("Explosive").withStyle(ChatFormatting.RED));
+        list.add(Component.translatable(getBaseDamage() + " Base Damage").withStyle(ChatFormatting.DARK_GREEN));
         super.appendHoverText(itemStack, level, list, tooltipFlag);
     }
 }

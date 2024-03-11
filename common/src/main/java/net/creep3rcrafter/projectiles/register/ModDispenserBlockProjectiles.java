@@ -1,7 +1,7 @@
 package net.creep3rcrafter.projectiles.register;
 
 import net.creep3rcrafter.projectiles.entity.projectile.*;
-import net.creep3rcrafter.projectiles.item.CustomArrowItem;
+import net.creep3rcrafter.projectiles.item.BaseArrowItem;
 import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -179,7 +179,7 @@ public class ModDispenserBlockProjectiles {
     public static void registerBasicArrow(ItemLike item, AbstractArrow arrow) {
         DispenserBlock.registerBehavior(item, new AbstractProjectileDispenseBehavior() {
             protected @NotNull Projectile getProjectile(@NotNull Level level, @NotNull Position position, @NotNull ItemStack itemStack) {
-                arrow.setBaseDamage(((CustomArrowItem) item).getBaseDamage());
+                arrow.setBaseDamage(((BaseArrowItem) item).getBaseDamage());
                 return arrow;
             }
         });

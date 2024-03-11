@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class EnderArrowItem extends CustomArrowItem {
+public class EnderArrowItem extends BaseArrowItem {
     public EnderArrowItem(Properties properties) {
         super(properties);
     }

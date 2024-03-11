@@ -7,7 +7,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class AmethystArrowItem extends CustomArrowItem {
+public class AmethystArrowItem extends BaseArrowItem {
 
     public AmethystArrowItem(Properties properties) {
         super(properties);

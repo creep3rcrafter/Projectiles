@@ -4,6 +4,7 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.creep3rcrafter.projectiles.Projectiles;
 import net.creep3rcrafter.projectiles.item.*;
+import net.minecraft.client.renderer.block.model.ItemOverride;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.ArrowItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -72,6 +73,8 @@ public class ModItems {
             new SoulArrowItem(new Item.Properties().stacksTo(16).tab(CreativeModeTab.TAB_COMBAT)));
     public static final RegistrySupplier<Item> DYNAMITE = ITEMS.register("dynamite", () ->
             new DynamiteItem(new Item.Properties().stacksTo(16).tab(CreativeModeTab.TAB_COMBAT)));
+    public static final RegistrySupplier<Item> CUSTOM_ARROW = ITEMS.register("custom_arrow", () ->
+            new CustomArrowItem(new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_COMBAT)));
     /*
     public static final RegistrySupplier<Item> LAUNCHER = ITEMS.register("launcher", () ->
             new LauncherItem(new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_COMBAT).durability(465)));

@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class SoulArrowItem extends CustomArrowItem {
+public class SoulArrowItem extends BaseArrowItem {
     public SoulArrowItem(Properties properties) {
         super(properties);
     }

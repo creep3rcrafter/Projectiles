@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class ChorusArrowItem extends CustomArrowItem {
+public class ChorusArrowItem extends BaseArrowItem {
     public ChorusArrowItem(Properties properties) {
         super(properties);
     }

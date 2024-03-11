@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class CobwebArrowItem extends CustomArrowItem {
+public class CobwebArrowItem extends BaseArrowItem {
     public CobwebArrowItem(Properties properties) {
         super(properties);
     }

@@ -6,7 +6,7 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class CopperArrowItem extends CustomArrowItem {
+public class CopperArrowItem extends BaseArrowItem {
     public CopperArrowItem(Properties properties) {
         super(properties);
     }

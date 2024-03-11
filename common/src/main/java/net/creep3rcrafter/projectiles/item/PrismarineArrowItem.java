@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class PrismarineArrowItem extends CustomArrowItem {
+public class PrismarineArrowItem extends BaseArrowItem {
     public PrismarineArrowItem(Properties properties) {
         super(properties);
     }

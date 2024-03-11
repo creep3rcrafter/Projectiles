@@ -1,0 +1,26 @@
+{
+  "parent": "projectiles:item/custom_arrow",
+  "textures": {
+    "layer2": "projectiles:item/feathers"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "projectiles:rod": 0
+      },
+      "model": "minecraft:item/arrow"
+    },
+    {
+      "predicate": {
+        "projectiles:rod": 1
+      },
+      "model": "projectiles:item/wood_rod"
+    },
+    {
+      "predicate": {
+        "projectiles:rod": 2
+      },
+      "model": "projectiles:item/blaze_rod"
+    }
+  ]
+}

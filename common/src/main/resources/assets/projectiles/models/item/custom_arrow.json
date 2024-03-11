@@ -1,0 +1,32 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer3": "minecraft:item/arrow"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "projectiles:tail": 0
+      },
+      "model": "minecraft:item/arrow"
+    },
+    {
+      "predicate": {
+        "projectiles:tail": 1
+      },
+      "model": "projectiles:item/feathers"
+    },
+    {
+      "predicate": {
+        "projectiles:tail": 2
+      },
+      "model": "projectiles:item/dark_feathers"
+    },
+    {
+      "predicate": {
+        "projectiles:tail": 3
+      },
+      "model": "projectiles:item/dark_feathers"
+    }
+  ]
+}

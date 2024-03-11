@@ -7,7 +7,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class BambooArrowItem extends CustomArrowItem {
+public class BambooArrowItem extends BaseArrowItem {
     public BambooArrowItem(Properties properties) {
         super(properties);
     }

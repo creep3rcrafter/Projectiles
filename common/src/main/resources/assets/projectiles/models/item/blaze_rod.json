@@ -1,0 +1,26 @@
+{
+  "parent": "projectiles:item/dark_feathers",
+  "textures": {
+    "layer1": "projectiles:item/blaze_rod"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "projectiles:rod": 0
+      },
+      "model": "minecraft:item/arrow"
+    },
+    {
+      "predicate": {
+        "projectiles:rod": 1
+      },
+      "model": "projectiles:item/amethyst_tip"
+    },
+    {
+      "predicate": {
+        "projectiles:rod": 2
+      },
+      "model": "projectiles:item/soul_tip"
+    }
+  ]
+}

@@ -6,7 +6,7 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class IronArrowItem extends CustomArrowItem {
+public class IronArrowItem extends BaseArrowItem {
     public IronArrowItem(Properties properties) {
         super(properties);
     }

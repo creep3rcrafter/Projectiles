@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class SlimeArrowItem extends CustomArrowItem {
+public class SlimeArrowItem extends BaseArrowItem {
     public SlimeArrowItem(Properties properties) {
         super(properties);
     }
