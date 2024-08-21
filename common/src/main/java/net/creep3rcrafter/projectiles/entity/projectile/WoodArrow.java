@@ -32,6 +32,7 @@ public class WoodArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.WOOD_ARROW.get());
+        return null;
+        //return new ItemStack(ModItems.WOOD_ARROW.get());
     }
 }

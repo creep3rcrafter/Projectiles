@@ -79,6 +79,7 @@ public class ChorusArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.CHORUS_ARROW.get());
+        return null;
+        //return new ItemStack(ModItems.CHORUS_ARROW.get());
     }
 }

@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class ModDispenserBlockProjectiles {
     static {
+        /*
         DispenserBlock.registerBehavior(ModItems.WOOD_ARROW.get(), new AbstractProjectileDispenseBehavior() {
             protected @NotNull Projectile getProjectile(@NotNull Level level, @NotNull Position position, @NotNull ItemStack itemStack) {
                 WoodArrow arrow = new WoodArrow(level, position.x(), position.y(), position.z());
@@ -169,6 +170,8 @@ public class ModDispenserBlockProjectiles {
                 return arrow;
             }
         });
+
+         */
         DispenserBlock.registerBehavior(ModItems.DYNAMITE.get(), new AbstractProjectileDispenseBehavior() {
             protected @NotNull Projectile getProjectile(@NotNull Level level, @NotNull Position position, @NotNull ItemStack itemStack) {
                 return new Dynamite(level, position.x(), position.y(), position.z());

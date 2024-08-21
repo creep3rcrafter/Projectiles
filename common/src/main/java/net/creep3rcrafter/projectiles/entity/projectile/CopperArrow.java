@@ -75,6 +75,7 @@ public class CopperArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.COPPER_ARROW.get());
+        return null;
+        //return new ItemStack(ModItems.COPPER_ARROW.get());
     }
 }

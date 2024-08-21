@@ -9,6 +9,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.world.item.ArrowItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Projectiles.MOD_ID, Registry.ITEM_REGISTRY);
@@ -31,7 +32,9 @@ public class ModItems {
     //lead arrow
     //ender arrow text, chorus text, cobweb text, copper text
     //diamond arrow and gold arrow do same damage
-    //full netherite arrowsp999999999999-
+    //full netherite arrows
+
+    /*
 
     public static final RegistrySupplier<ArrowItem> WOOD_ARROW = ITEMS.register("wood_arrow", () ->
             new WoodArrowItem(new Item.Properties().stacksTo(64).tab(CreativeModeTab.TAB_COMBAT)));
@@ -71,10 +74,13 @@ public class ModItems {
             new EchoArrowItem(new Item.Properties().stacksTo(16).tab(CreativeModeTab.TAB_COMBAT)));
     public static final RegistrySupplier<ArrowItem> SOUL_ARROW = ITEMS.register("soul_arrow", () ->
             new SoulArrowItem(new Item.Properties().stacksTo(16).tab(CreativeModeTab.TAB_COMBAT)));
+    */
     public static final RegistrySupplier<Item> DYNAMITE = ITEMS.register("dynamite", () ->
             new DynamiteItem(new Item.Properties().stacksTo(16).tab(CreativeModeTab.TAB_COMBAT)));
     public static final RegistrySupplier<Item> CUSTOM_ARROW = ITEMS.register("custom_arrow", () ->
             new CustomArrowItem(new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_COMBAT)));
+    public static final RegistrySupplier<Item> GHAST_SCALE = ITEMS.register("ghast_scale", () ->
+            new Item(new Item.Properties().stacksTo(64).tab(CreativeModeTab.TAB_MATERIALS)));
     /*
     public static final RegistrySupplier<Item> LAUNCHER = ITEMS.register("launcher", () ->
             new LauncherItem(new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_COMBAT).durability(465)));

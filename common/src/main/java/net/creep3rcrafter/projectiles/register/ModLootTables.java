@@ -9,6 +9,7 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 public class ModLootTables {
     static {
+        /*
         LootEvent.MODIFY_LOOT_TABLE.register((lootTables, id, context, builtin) -> {
             if (builtin && BuiltInLootTables.ANCIENT_CITY.equals(id)) {
                 LootPool.Builder pool = LootPool.lootPool()
@@ -155,5 +156,7 @@ public class ModLootTables {
                 context.addPool(pool);
             }
         });
+
+         */
     }
 }

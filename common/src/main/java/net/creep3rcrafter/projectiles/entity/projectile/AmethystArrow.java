@@ -31,6 +31,7 @@ public class AmethystArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.AMETHYST_ARROW.get());
+        return null;
+        //return new ItemStack(ModItems.AMETHYST_ARROW.get());
     }
 }

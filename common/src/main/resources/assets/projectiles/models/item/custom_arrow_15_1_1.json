@@ -1,0 +1,8 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "projectiles:item/bamboo_rod",
+    "layer1": "projectiles:item/dynamite_tip",
+    "layer2": "projectiles:item/ghast_scale_tail"
+  }
+}

@@ -32,6 +32,7 @@ public class BoneArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.BONE_ARROW.get());
+        return null;
+        //return new ItemStack(ModItems.BONE_ARROW.get());
     }
 }

@@ -56,6 +56,7 @@ public class SlimeArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.SLIME_ARROW.get());
+        return null;
+        //return new ItemStack(ModItems.SLIME_ARROW.get());
     }
 }

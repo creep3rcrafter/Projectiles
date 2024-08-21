@@ -72,6 +72,9 @@ public class ModEntityTypes {
     public static final RegistrySupplier<EntityType<Dynamite>> DYNAMITE = ENTITY_TYPES.register("dynamite", () ->
             EntityType.Builder.<Dynamite>of(Dynamite::new, MobCategory.MISC).sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build(
                     new ResourceLocation(Projectiles.MOD_ID, "dynamite").toString()));
+    public static final RegistrySupplier<EntityType<CustomArrow>> CUSTOM_ARROW = ENTITY_TYPES.register("custom_arrow", () ->
+            EntityType.Builder.<CustomArrow>of(CustomArrow::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build(
+                    new ResourceLocation(Projectiles.MOD_ID, "custom_arrow").toString()));
     /*
     public static final RegistrySupplier<EntityType<Lasso>> LASSO = ENTITY_TYPES.register("lasso", () ->
             EntityType.Builder.<Lasso>of(Lasso::new, MobCategory.MISC).sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build(

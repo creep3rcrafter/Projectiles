@@ -64,6 +64,7 @@ public class SoulArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.SOUL_ARROW.get());
+        return null;
+        //return new ItemStack(ModItems.SOUL_ARROW.get());
     }
 }

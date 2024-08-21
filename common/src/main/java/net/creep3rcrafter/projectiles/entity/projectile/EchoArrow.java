@@ -130,6 +130,7 @@ public class EchoArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.ECHO_ARROW.get());
+        return null;
+        //return new ItemStack(ModItems.ECHO_ARROW.get());
     }
 }

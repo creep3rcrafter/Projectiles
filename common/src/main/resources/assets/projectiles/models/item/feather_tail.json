@@ -1,0 +1,20 @@
+{
+  "parent": "projectiles:item/custom_arrow",
+  "textures": {
+    "layer0": "projectiles:item/wood_rod"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "projectiles:tail": 0.0
+      },
+      "model": "projectiles:item/feather_tail"
+    },
+    {
+      "predicate": {
+        "projectiles:tail": 0.05
+      },
+      "model": "projectiles:item/burnt_feather_tail"
+    },
+  ]
+}

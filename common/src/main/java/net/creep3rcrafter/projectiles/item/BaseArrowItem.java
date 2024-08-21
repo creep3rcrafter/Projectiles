@@ -21,6 +21,9 @@ public abstract class BaseArrowItem extends ArrowItem {
     public double getBaseDamage() {
         return 0;
     }
+    public double getBaseDamage(ItemStack itemStack) {
+        return 0;
+    }
 
     @Override
     public AbstractArrow createArrow(@NotNull Level level, @NotNull ItemStack itemStack, @NotNull LivingEntity livingEntity) {
@@ -29,7 +32,7 @@ public abstract class BaseArrowItem extends ArrowItem {
 
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, @NotNull List<Component> list, @NotNull TooltipFlag tooltipFlag) {
-        list.add(Component.translatable(getBaseDamage() + " Base Damage").withStyle(ChatFormatting.DARK_GREEN));
+        list.add(Component.translatable(getBaseDamage(itemStack) + " Base Damage").withStyle(ChatFormatting.DARK_GREEN));
         super.appendHoverText(itemStack, level, list, tooltipFlag);
     }
 }

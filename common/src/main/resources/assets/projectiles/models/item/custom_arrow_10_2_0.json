@@ -1,0 +1,8 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "projectiles:item/blaze_rod",
+    "layer1": "projectiles:item/amethyst_tip",
+    "layer2": "projectiles:item/burnt_feather_tail"
+  }
+}

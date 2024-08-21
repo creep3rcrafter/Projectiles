@@ -47,6 +47,7 @@ public class PrismarineArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.PRISMARINE_ARROW.get());
+        return null;
+        //return new ItemStack(ModItems.PRISMARINE_ARROW.get());
     }
 }

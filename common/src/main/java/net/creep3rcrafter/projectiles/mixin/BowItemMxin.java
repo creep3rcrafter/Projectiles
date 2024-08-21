@@ -10,5 +10,5 @@ public class BowItemMxin {
     public void inject2(BlockState blockState, CallbackInfoReturnable<Boolean> cir) {
 
     }
-     */
+    */
 }

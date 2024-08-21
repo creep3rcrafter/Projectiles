@@ -53,6 +53,7 @@ public class TNTArrow extends AbstractArrow {
 
     @Override
     protected @NotNull ItemStack getPickupItem() {
-        return new ItemStack(ModItems.TNT_ARROW.get());
+        return null;
+        //return new ItemStack(ModItems.TNT_ARROW.get());
     }
 }
